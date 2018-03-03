@@ -15,16 +15,9 @@
 #include <GL/glu.h>
 #include <cstdio>
 #include <math.h>
+#include"SampleModel.h"
 const float PI = 3.14159265f;
-// To make a SampleModel, we inherit off of ModelerView
-class SampleModel : public ModelerView 
-{
-public:
-    SampleModel(int x, int y, int w, int h, char *label) 
-        : ModelerView(x,y,w,h,label) { }
 
-    virtual void draw();
-};
 
 // We need to make a creator function, mostly because of
 // nasty API stuff that we'd rather stay away from.
@@ -55,6 +48,13 @@ void SampleModel::draw()
 		glEnable(GL_LIGHT1);
 		glEnable(GL_NORMALIZE);
 	}
+	if (VAL(SAMPLE_FOG) == 1) {
+		SampleFog();
+	}
+	else {
+		glDisable(GL_FOG);
+	}
+	glClearColor(0.5, 0.5, 0.5, 1.0);  /* fog color */
 
 	glViewport(0, 0, w(), h());
 	glMatrixMode(GL_PROJECTION);
@@ -298,6 +298,7 @@ int main()
 	controls[RIGHT_UPPER_LEG_ROTATEZ] = ModelerControl("Right Leg Rotate Z", -135, 135, 1, 0);
 	controls[LEFT_LOWER_LEG_ROTATE] = ModelerControl("Left Fore Leg Rotate", -135, 135, 1, 0);
 	controls[RIGHT_LOWER_LEG_ROTATE] = ModelerControl("Right Fore Leg Rotate", -135, 135, 1, 0);
+	controls[SAMPLE_FOG] = ModelerControl("sample fog effect", 0, 1, 1, 0);
     ModelerApplication::Instance()->Init(&createSampleModel, controls, NUMCONTROLS);
     return ModelerApplication::Instance()->Run();
 }

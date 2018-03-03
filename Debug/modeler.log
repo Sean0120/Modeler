@@ -1,18 +1,9 @@
-﻿  modelerapp.cpp
-d:\desktop\comp4411\modeler\modelerapp.cpp(38): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(343): note: see declaration of 'strncpy'
-  Generating Code...
-  Compiling...
-  sample.cpp
+﻿  sample.cpp
 d:\desktop\comp4411\modeler\sample.cpp(69): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
 d:\desktop\comp4411\modeler\sample.cpp(70): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
 d:\desktop\comp4411\modeler\sample.cpp(71): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-  modelerui.cxx
-d:\desktop\comp4411\modeler\modelerui.cxx(103): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
-  modelerdraw.cpp
-d:\desktop\comp4411\modeler\modelerdraw.cpp(151): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+  Fogcpp.cpp
+d:\desktop\comp4411\modeler\fogcpp.cpp(12): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
   Generating Code...
   modeler.vcxproj -> D:\Desktop\COMP4411\Modeler\.\Debug\modeler.exe
   modeler.vcxproj -> .\Debug/modeler.pdb (Full PDB)
