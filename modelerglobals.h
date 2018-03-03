@@ -10,7 +10,7 @@
 // of the controls from the user interface.
 enum SampleModelControls
 { 
-	XPOS, YPOS, ZPOS, HEIGHT,
+	XPOS, YPOS, ZPOS, 
 	LIGHT_POSITION_X,
 	LIGHT_POSITION_Y,
 	LIGHT_POSITION_Z,
