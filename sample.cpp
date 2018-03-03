@@ -79,196 +79,244 @@ void SampleModel::draw()
 
 	setAmbientColor(.1f, .1f, .1f);
 	setDiffuseColor(COLOR_GREEN);
+{
 	glPushMatrix();//Whole model begin
 	glTranslated(VAL(XPOS), VAL(YPOS), VAL(ZPOS));
 	//glTranslated(0, -1, 0);
 	
-	
-	glPushMatrix();//Upper body begin
-	glRotated(VAL(UPPER_BODY_ROTATE), 0.0, 1.0, 0.0);
-	//Main body
-	glPushMatrix();
-	glRotated(-90, 1.0, 0, 0);
-	drawCylinder(4, 1, 1);
-	glPopMatrix();
-	//Head
-	glPushMatrix();
-	glTranslated(0, 4.85, 0);
-	drawSphere(0.85);
-	glPopMatrix();
-	//Joints connecting upper arm and main body
-	glPushMatrix();
-	glTranslated(-1.5, 3.5, 0);
-	drawSphere(0.5);
-	glPopMatrix();
-
-	glPushMatrix();
-	glTranslated(1.5, 3.5, 0);
-	drawSphere(0.5);
-	glPopMatrix();
-	
-	glPushMatrix();//Left arm begin
-	glTranslated(-1.5, 3.5, 0);//Upper arm rotate
-	glRotated(-VAL(LEFT_UPPER_ARM_ROTATEX), 1.0, 0.0, 0.0);
-	glRotated(-VAL(LEFT_UPPER_ARM_ROTATEZ), 0.0, 0.0, 1.0);
-	glTranslated(1.5, -3.5, 0);
-	
-	glPushMatrix();//Upper arm
-	glTranslated(-1.5, 3.5, 0);
-	glRotated(90, 1.0, 0.0, 0.0);
-	drawCylinder(3, 0.4, 0.4);
-	glPopMatrix();
-	
-	glPushMatrix();//Joint
-	glTranslated(-1.5, 0.5, 0);
-	drawSphere(0.5);
-	glPopMatrix();
-
-	glPushMatrix();//Lower arm begin
-	glTranslated(0.0, 0.5, 0.0);//Lower arm rotate
-	glRotated(-VAL(LEFT_LOWER_ARM_ROTATE), 1.0, 0.0, 0.0);
-	glTranslated(0.0, -0.5, 0.0);
-	
-	glPushMatrix();//Lower arm draw
-	glTranslated(-1.5, 0.5, 0.0);
-	glRotated(90, 1.0, 0.0, 0.0);
-	drawCylinder(2, 0.4, 0.4);
-	glPopMatrix();
-	glPushMatrix();//left hand
-	glTranslated(-1.5, -1.5, 0.0);
-	drawSphere(0.5);
-	glPopMatrix();
-	glPopMatrix();//lower arm end
-
-	glPopMatrix();//left arm end
-
-	glPushMatrix();//right arm begin
-	glTranslated(1.5, 3.5, 0);//Upper arm rotate
-	glRotated(-VAL(RIGHT_UPPER_ARM_ROTATEX), 1.0, 0.0, 0.0);
-	glRotated(-VAL(RIGHT_UPPER_ARM_ROTATEZ), 0.0, 0.0, 1.0);
-	glTranslated(-1.5, -3.5, 0);
-
-	glPushMatrix();//Upper arm
-	glTranslated(1.5, 3.5, 0);
-	glRotated(90, 1.0, 0.0, 0.0);
-	drawCylinder(3, 0.4, 0.4);
-	glPopMatrix();
-
-	glPushMatrix();//Joint
-	glTranslated(1.5, 0.5, 0);
-	drawSphere(0.5);
-	glPopMatrix();
-
-	glPushMatrix();//Lower arm begin
-	glTranslated(0.0, 0.5, 0.0);//Lower arm rotate
-	glRotated(-VAL(RIGHT_LOWER_ARM_ROTATE), 1.0, 0.0, 0.0);
-	glTranslated(0.0, -0.5, 0.0);
-
-	glPushMatrix();//Lower arm draw
-	glTranslated(1.5, 0.5, 0.0);
-	glRotated(90, 1.0, 0.0, 0.0);
-	drawCylinder(2, 0.4, 0.4);
-	glPopMatrix();
-	glPushMatrix();//left hand
-	glTranslated(1.5, -1.5, 0.0);
-	drawSphere(0.5);
-	glPopMatrix();
-	glPopMatrix();//lower arm end
-	glPopMatrix();//right arm end
-	glPopMatrix();//Upper body end
-
-	glPushMatrix();//lower body begin
-	glRotated(VAL(LOWER_BODY_ROTATE), 0.0, 1.0, 0.0);
-	glPushMatrix();//hip
-	glRotated(30, 0.0, 1.0, 0.0);
-	for (int i = 0; i != 6; i++) {
-		drawTriangle(0, -0.75, 0, 0.8*sin(i*PI / 3), -0.75, 0.8*cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3));
-		drawTriangle(sin(i*PI/3), 0, cos(i*PI/3), 0.8*sin(i*PI / 3), -0.75, 0.8*cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3));
-		drawTriangle(sin(i*PI / 3), 0, cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3), sin((i+1)*PI / 3), 0, cos((i+1)*PI / 3));
+	{	
+		glPushMatrix();//Upper body begin
+		glRotated(VAL(UPPER_BODY_ROTATE), 0.0, 1.0, 0.0);
+		{
+			//Main body
+			glPushMatrix();
+			glRotated(-90, 1.0, 0, 0);
+			drawCylinder(4, 1, 1);
+			glPopMatrix();
+		}
+		{
+			//Head
+			glPushMatrix();
+			glTranslated(0, 4.85, 0);
+			drawSphere(0.85);
+			glPopMatrix();
+		}
+		{
+			//Joints connecting upper arm and main body
+			glPushMatrix();
+			glTranslated(-1.5, 3.5, 0);
+			drawSphere(0.5);
+			glPopMatrix();
+		}
+		{
+			glPushMatrix();
+			glTranslated(1.5, 3.5, 0);
+			drawSphere(0.5);
+			glPopMatrix();
+		}
+		if(VAL(Level_OF_DETAILS) > 1)
+		{
+			glPushMatrix();//Left arm begin
+			glTranslated(-1.5, 3.5, 0);//Upper arm rotate
+			glRotated(-VAL(LEFT_UPPER_ARM_ROTATEX), 1.0, 0.0, 0.0);
+			glRotated(-VAL(LEFT_UPPER_ARM_ROTATEZ), 0.0, 0.0, 1.0);
+			glTranslated(1.5, -3.5, 0);
+			{
+		
+				glPushMatrix();//Upper arm
+				glTranslated(-1.5, 3.5, 0);
+				glRotated(90, 1.0, 0.0, 0.0);
+				drawCylinder(3, 0.4, 0.4);
+				glPopMatrix();
+			}
+			{
+				glPushMatrix();//Joint
+				glTranslated(-1.5, 0.5, 0);
+				drawSphere(0.5);
+				glPopMatrix();
+			}
+			if(VAL(Level_OF_DETAILS) > 2)
+			{
+				glPushMatrix();//Lower arm begin
+				glTranslated(0.0, 0.5, 0.0);//Lower arm rotate
+				glRotated(-VAL(LEFT_LOWER_ARM_ROTATE), 1.0, 0.0, 0.0);
+				glTranslated(0.0, -0.5, 0.0);
+				{
+					glPushMatrix();//Lower arm draw
+					glTranslated(-1.5, 0.5, 0.0);
+					glRotated(90, 1.0, 0.0, 0.0);
+					drawCylinder(2, 0.4, 0.4);
+					glPopMatrix();
+				}
+				if (VAL(Level_OF_DETAILS) > 3)
+				{
+					glPushMatrix();//left hand
+					glTranslated(-1.5, -1.5, 0.0);
+					drawSphere(0.5);
+					glPopMatrix();
+				}
+				glPopMatrix();//lower arm end
+			}
+			glPopMatrix();//left arm end
+		}
+		if (VAL(Level_OF_DETAILS) > 1)
+		{
+			glPushMatrix();//right arm begin
+			glTranslated(1.5, 3.5, 0);//Upper arm rotate
+			glRotated(-VAL(RIGHT_UPPER_ARM_ROTATEX), 1.0, 0.0, 0.0);
+			glRotated(-VAL(RIGHT_UPPER_ARM_ROTATEZ), 0.0, 0.0, 1.0);
+			glTranslated(-1.5, -3.5, 0);
+			{
+				glPushMatrix();//Upper arm
+				glTranslated(1.5, 3.5, 0);
+				glRotated(90, 1.0, 0.0, 0.0);
+				drawCylinder(3, 0.4, 0.4);
+				glPopMatrix();
+			}
+			{
+				glPushMatrix();//Joint
+				glTranslated(1.5, 0.5, 0);
+				drawSphere(0.5);
+				glPopMatrix();
+			}
+			if (VAL(Level_OF_DETAILS) > 2)
+			{
+				glPushMatrix();//Lower arm begin
+				glTranslated(0.0, 0.5, 0.0);//Lower arm rotate
+				glRotated(-VAL(RIGHT_LOWER_ARM_ROTATE), 1.0, 0.0, 0.0);
+				glTranslated(0.0, -0.5, 0.0);
+				{
+					glPushMatrix();//Lower arm draw
+					glTranslated(1.5, 0.5, 0.0);
+					glRotated(90, 1.0, 0.0, 0.0);
+					drawCylinder(2, 0.4, 0.4);
+					glPopMatrix();
+				}
+				if (VAL(Level_OF_DETAILS) > 3)
+				{
+					glPushMatrix();//left hand
+					glTranslated(1.5, -1.5, 0.0);
+					drawSphere(0.5);
+					glPopMatrix();
+				}
+				glPopMatrix();//lower arm end
+			}
+			glPopMatrix();//right arm end
+		}
+		glPopMatrix();//Upper body end
 	}
-	glPopMatrix();
-
-	glPushMatrix();//Joints connecting legs and lower body
-	glTranslated(-0.5, -0.5, 0);
-	drawSphere(0.5);
-	glTranslated(1, 0, 0);
-	drawSphere(0.5);
-	glPopMatrix();
-
-	glPushMatrix();//Left leg begin
-	glTranslated(-0.5, -0.5, 0);//Upper leg rotate
-	glRotated(-VAL(LEFT_UPPER_LEG_ROTATEX), 1.0, 0.0, 0.0);
-	glRotated(-VAL(LEFT_UPPER_LEG_ROTATEZ), 0.0, 0.0, 1.0);
-	glTranslated(0.5, 0.5, 0);
-
-	glPushMatrix();//Upper leg
-	glTranslated(-0.5, -0.5, 0);
-	glRotated(90, 1.0, 0.0, 0.0);
-	drawCylinder(2, 0.4, 0.4);
-	glPopMatrix();
-
-	glPushMatrix();//Joint
-	glTranslated(-0.5, -2.5, 0);
-	drawSphere(0.5);
-	glPopMatrix();
-
-	glPushMatrix();//Lower leg begin
-	glTranslated(0.0, -2.5, 0.0);//Lower leg rotate
-	glRotated(-VAL(LEFT_LOWER_LEG_ROTATE), 1.0, 0.0, 0.0);
-	glTranslated(0.0, 2.5, 0.0);
-
-	glPushMatrix();//Lower leg draw
-	glTranslated(-0.5, -2.5, 0.0);
-	glRotated(90, 1.0, 0.0, 0.0);
-	drawCylinder(3, 0.4, 0.4);
-	glPopMatrix();
-	glPushMatrix();//left foot
-	glTranslated(-0.5, -5.5, 0.0);
-	drawSphere(0.5);
-	glPopMatrix();
-	glPopMatrix();//lower leg end
-
-	glPopMatrix();//left leg end
-
-	glPushMatrix();//Right leg begin
-	glTranslated(0.5, -0.5, 0);//Upper leg rotate
-	glRotated(-VAL(RIGHT_UPPER_LEG_ROTATEX), 1.0, 0.0, 0.0);
-	glRotated(-VAL(RIGHT_UPPER_LEG_ROTATEZ), 0.0, 0.0, 1.0);
-	glTranslated(-0.5, 0.5, 0);
-
-	glPushMatrix();//Upper leg
-	glTranslated(0.5, -0.5, 0);
-	glRotated(90, 1.0, 0.0, 0.0);
-	drawCylinder(2, 0.4, 0.4);
-	glPopMatrix();
-
-	glPushMatrix();//Joint
-	glTranslated(0.5, -2.5, 0);
-	drawSphere(0.5);
-	glPopMatrix();
-
-	glPushMatrix();//Lower leg begin
-	glTranslated(0.0, -2.5, 0.0);//Lower leg rotate
-	glRotated(-VAL(RIGHT_LOWER_LEG_ROTATE), 1.0, 0.0, 0.0);
-	glTranslated(0.0, 2.5, 0.0);
-
-	glPushMatrix();//Lower leg draw
-	glTranslated(0.5, -2.5, 0.0);
-	glRotated(90, 1.0, 0.0, 0.0);
-	drawCylinder(3, 0.4, 0.4);
-	glPopMatrix();
-	glPushMatrix();//Right foot
-	glTranslated(0.5, -5.5, 0.0);
-	drawSphere(0.5);
-	glPopMatrix();
-	glPopMatrix();//lower leg end
-
-	glPopMatrix();//left leg end
-	
-	glPopMatrix();//lower body end
-
+	if(VAL(Level_OF_DETAILS) > 1)
+	{
+		glPushMatrix();//lower body begin
+		glRotated(VAL(LOWER_BODY_ROTATE), 0.0, 1.0, 0.0);
+		{
+			glPushMatrix();//hip
+			glRotated(30, 0.0, 1.0, 0.0);
+			for (int i = 0; i != 6; i++) {
+				drawTriangle(0, -0.75, 0, 0.8*sin(i*PI / 3), -0.75, 0.8*cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3));
+				drawTriangle(sin(i*PI/3), 0, cos(i*PI/3), 0.8*sin(i*PI / 3), -0.75, 0.8*cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3));
+				drawTriangle(sin(i*PI / 3), 0, cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3), sin((i+1)*PI / 3), 0, cos((i+1)*PI / 3));
+			}
+			glPopMatrix();
+		}
+		{
+			glPushMatrix();//Joints connecting legs and upper body
+			glTranslated(-0.5, -0.5, 0);
+			drawSphere(0.5);
+			glTranslated(1, 0, 0);
+			drawSphere(0.5);
+			glPopMatrix();
+		}
+		if (VAL(Level_OF_DETAILS) > 2)
+		{
+			glPushMatrix();//Left leg begin
+			glTranslated(-0.5, -0.5, 0);//Upper leg rotate
+			glRotated(-VAL(LEFT_UPPER_LEG_ROTATEX), 1.0, 0.0, 0.0);
+			glRotated(-VAL(LEFT_UPPER_LEG_ROTATEZ), 0.0, 0.0, 1.0);
+			glTranslated(0.5, 0.5, 0);
+			{
+				glPushMatrix();//Upper leg
+				glTranslated(-0.5, -0.5, 0);
+				glRotated(90, 1.0, 0.0, 0.0);
+				drawCylinder(2, 0.4, 0.4);
+				glPopMatrix();
+			}
+			{
+				glPushMatrix();//Joint
+				glTranslated(-0.5, -2.5, 0);
+				drawSphere(0.5);
+				glPopMatrix();
+			}
+			if (VAL(Level_OF_DETAILS) > 3)
+			{
+				glPushMatrix();//Lower leg begin
+				glTranslated(0.0, -2.5, 0.0);//Lower leg rotate
+				glRotated(-VAL(LEFT_LOWER_LEG_ROTATE), 1.0, 0.0, 0.0);
+				glTranslated(0.0, 2.5, 0.0);
+				{
+					glPushMatrix();//Lower leg draw
+					glTranslated(-0.5, -2.5, 0.0);
+					glRotated(90, 1.0, 0.0, 0.0);
+					drawCylinder(3, 0.4, 0.4);
+					glPopMatrix();
+				}
+				{
+					glPushMatrix();//left foot
+					glTranslated(-0.5, -5.5, 0.0);
+					drawSphere(0.5);
+					glPopMatrix();
+				}
+				glPopMatrix();//lower leg end
+			}
+			glPopMatrix();//left leg end
+		}
+		if (VAL(Level_OF_DETAILS) > 2)
+		{
+			glPushMatrix();//Right leg begin
+			glTranslated(0.5, -0.5, 0);//Upper leg rotate
+			glRotated(-VAL(RIGHT_UPPER_LEG_ROTATEX), 1.0, 0.0, 0.0);
+			glRotated(-VAL(RIGHT_UPPER_LEG_ROTATEZ), 0.0, 0.0, 1.0);
+			glTranslated(-0.5, 0.5, 0);
+			{
+				glPushMatrix();//Upper leg
+				glTranslated(0.5, -0.5, 0);
+				glRotated(90, 1.0, 0.0, 0.0);
+				drawCylinder(2, 0.4, 0.4);
+				glPopMatrix();
+			}
+			{
+				glPushMatrix();//Joint
+				glTranslated(0.5, -2.5, 0);
+				drawSphere(0.5);
+				glPopMatrix();
+			}
+			if (VAL(Level_OF_DETAILS) > 3)
+			{
+				glPushMatrix();//Lower leg begin
+				glTranslated(0.0, -2.5, 0.0);//Lower leg rotate
+				glRotated(-VAL(RIGHT_LOWER_LEG_ROTATE), 1.0, 0.0, 0.0);
+				glTranslated(0.0, 2.5, 0.0);
+				{
+					glPushMatrix();//Lower leg draw
+					glTranslated(0.5, -2.5, 0.0);
+					glRotated(90, 1.0, 0.0, 0.0);
+					drawCylinder(3, 0.4, 0.4);
+					glPopMatrix();
+				}
+				{
+					glPushMatrix();//Right foot
+					glTranslated(0.5, -5.5, 0.0);
+					drawSphere(0.5);
+					glPopMatrix();
+				}
+				glPopMatrix();//lower leg end
+			}
+			glPopMatrix();//Right leg end
+		}
+		glPopMatrix();//lower body end
+	}
 	glPopMatrix();//Whole model end
-	
+}
 
 }
 
@@ -299,6 +347,7 @@ int main()
 	controls[LEFT_LOWER_LEG_ROTATE] = ModelerControl("Left Fore Leg Rotate", -135, 135, 1, 0);
 	controls[RIGHT_LOWER_LEG_ROTATE] = ModelerControl("Right Fore Leg Rotate", -135, 135, 1, 0);
 	controls[SAMPLE_FOG] = ModelerControl("sample fog effect", 0, 1, 1, 0);
+	controls[Level_OF_DETAILS] = ModelerControl("levels of details", 1, 4, 1, 4);
     ModelerApplication::Instance()->Init(&createSampleModel, controls, NUMCONTROLS);
     return ModelerApplication::Instance()->Run();
 }
