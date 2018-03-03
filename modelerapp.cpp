@@ -8,7 +8,8 @@
 #include <cstring>
 #include <cstdio>
 #include <cstdlib>
-
+#include <iostream>
+using namespace std;
 // CLASS ModelerControl METHODS
 
 ModelerControl::ModelerControl() : m_minimum(0.0f), m_maximum(1.0f), m_stepsize(0.1f), m_value(0.0f)
@@ -168,6 +169,8 @@ void ModelerApplication::HideControl(int controlNumber)
 
 void ModelerApplication::SliderCallback(Fl_Slider *, void *)
 {
+	
+	
     ModelerApplication::Instance()->m_ui->m_modelerView->redraw();
 }
 

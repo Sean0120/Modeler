@@ -7,6 +7,15 @@
 
 #include "modelerglobals.h"
 
+#include "camera.h"
+
+#include <FL/Fl.H>
+#include <FL/Fl_Gl_Window.h>
+
+#include <GL/glu.h>
+#include <cstdio>
+#include <math.h>
+const float PI = 3.14159265f;
 // To make a SampleModel, we inherit off of ModelerView
 class SampleModel : public ModelerView 
 {
@@ -24,6 +33,11 @@ ModelerView* createSampleModel(int x, int y, int w, int h, char *label)
     return new SampleModel(x,y,w,h,label); 
 }
 
+static GLfloat lightPosition0[] = { 4, 2, -4, 0 };
+static GLfloat lightDiffuse0[] = { 1,1,1,1 };
+static GLfloat lightPosition1[] = { -2, 1, 5, 0 };
+static GLfloat lightDiffuse1[] = { 1, 1, 1, 1 };
+
 // We are going to override (is that the right word?) the draw()
 // method of ModelerView to draw out SampleModel
 void SampleModel::draw()
@@ -31,43 +45,231 @@ void SampleModel::draw()
     // This call takes care of a lot of the nasty projection 
     // matrix stuff.  Unless you want to fudge directly with the 
 	// projection matrix, don't bother with this ...
-    ModelerView::draw();
+    //To finish the bonus part, we have to deal with this part manually
+	if (!valid())
+	{
+		glShadeModel(GL_SMOOTH);
+		glEnable(GL_DEPTH_TEST);
+		glEnable(GL_LIGHTING);
+		glEnable(GL_LIGHT0);
+		glEnable(GL_LIGHT1);
+		glEnable(GL_NORMALIZE);
+	}
 
-	// draw the floor
-	setAmbientColor(.1f,.1f,.1f);
-	setDiffuseColor(COLOR_RED);
-	glPushMatrix();
-	glTranslated(-5,0,-5);
-	drawBox(10,0.01f,10);
-	glPopMatrix();
+	glViewport(0, 0, w(), h());
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluPerspective(30.0, float(w()) / float(h()), 1.0, 100.0);
 
-	// draw the sample model
-	setAmbientColor(.1f,.1f,.1f);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	m_camera->applyViewingTransform();
+	//get the light 0 position from the sliders
+	lightPosition0[0] = VAL(LIGHT_POSITION_X);
+	lightPosition0[1] = VAL(LIGHT_POSITION_Y);
+	lightPosition0[2] = VAL(LIGHT_POSITION_Z);
+
+	glLightfv(GL_LIGHT0, GL_POSITION, lightPosition0);
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, lightDiffuse0);
+	glLightfv(GL_LIGHT1, GL_POSITION, lightPosition1);
+	glLightfv(GL_LIGHT1, GL_DIFFUSE, lightDiffuse1);
+
+
+
+	setAmbientColor(.1f, .1f, .1f);
 	setDiffuseColor(COLOR_GREEN);
-	glPushMatrix();
+	glPushMatrix();//Whole model begin
 	glTranslated(VAL(XPOS), VAL(YPOS), VAL(ZPOS));
-
-		glPushMatrix();
-		glTranslated(-1.5, 0, -2);
-		glScaled(3, 1, 4);
-		drawBox(1,1,1);
-		glPopMatrix();
-
-		// draw cannon
-		glPushMatrix();
-		glRotated(VAL(ROTATE), 0.0, 1.0, 0.0);
-		glRotated(-90, 1.0, 0.0, 0.0);
-		drawCylinder(VAL(HEIGHT), 0.1, 0.1);
-
-		glTranslated(0.0, 0.0, VAL(HEIGHT));
-		drawCylinder(1, 1.0, 0.9);
-
-		glTranslated(0.0, 0.0, 0.5);
-		glRotated(90, 1.0, 0.0, 0.0);
-		drawCylinder(4, 0.1, 0.2);
-		glPopMatrix();
-
+	//glTranslated(0, -1, 0);
+	
+	
+	glPushMatrix();//Upper body begin
+	glRotated(VAL(UPPER_BODY_ROTATE), 0.0, 1.0, 0.0);
+	//Main body
+	glPushMatrix();
+	glRotated(-90, 1.0, 0, 0);
+	drawCylinder(4, 1, 1);
 	glPopMatrix();
+	//Head
+	glPushMatrix();
+	glTranslated(0, 4.85, 0);
+	drawSphere(0.85);
+	glPopMatrix();
+	//Joints connecting upper arm and main body
+	glPushMatrix();
+	glTranslated(-1.5, 3.5, 0);
+	drawSphere(0.5);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(1.5, 3.5, 0);
+	drawSphere(0.5);
+	glPopMatrix();
+	
+	glPushMatrix();//Left arm begin
+	glTranslated(-1.5, 3.5, 0);//Upper arm rotate
+	glRotated(-VAL(LEFT_UPPER_ARM_ROTATEX), 1.0, 0.0, 0.0);
+	glRotated(-VAL(LEFT_UPPER_ARM_ROTATEZ), 0.0, 0.0, 1.0);
+	glTranslated(1.5, -3.5, 0);
+	
+	glPushMatrix();//Upper arm
+	glTranslated(-1.5, 3.5, 0);
+	glRotated(90, 1.0, 0.0, 0.0);
+	drawCylinder(3, 0.4, 0.4);
+	glPopMatrix();
+	
+	glPushMatrix();//Joint
+	glTranslated(-1.5, 0.5, 0);
+	drawSphere(0.5);
+	glPopMatrix();
+
+	glPushMatrix();//Lower arm begin
+	glTranslated(0.0, 0.5, 0.0);//Lower arm rotate
+	glRotated(-VAL(LEFT_LOWER_ARM_ROTATE), 1.0, 0.0, 0.0);
+	glTranslated(0.0, -0.5, 0.0);
+	
+	glPushMatrix();//Lower arm draw
+	glTranslated(-1.5, 0.5, 0.0);
+	glRotated(90, 1.0, 0.0, 0.0);
+	drawCylinder(2, 0.4, 0.4);
+	glPopMatrix();
+	glPushMatrix();//left hand
+	glTranslated(-1.5, -1.5, 0.0);
+	drawSphere(0.5);
+	glPopMatrix();
+	glPopMatrix();//lower arm end
+
+	glPopMatrix();//left arm end
+
+	glPushMatrix();//right arm begin
+	glTranslated(1.5, 3.5, 0);//Upper arm rotate
+	glRotated(-VAL(RIGHT_UPPER_ARM_ROTATEX), 1.0, 0.0, 0.0);
+	glRotated(-VAL(RIGHT_UPPER_ARM_ROTATEZ), 0.0, 0.0, 1.0);
+	glTranslated(-1.5, -3.5, 0);
+
+	glPushMatrix();//Upper arm
+	glTranslated(1.5, 3.5, 0);
+	glRotated(90, 1.0, 0.0, 0.0);
+	drawCylinder(3, 0.4, 0.4);
+	glPopMatrix();
+
+	glPushMatrix();//Joint
+	glTranslated(1.5, 0.5, 0);
+	drawSphere(0.5);
+	glPopMatrix();
+
+	glPushMatrix();//Lower arm begin
+	glTranslated(0.0, 0.5, 0.0);//Lower arm rotate
+	glRotated(-VAL(RIGHT_LOWER_ARM_ROTATE), 1.0, 0.0, 0.0);
+	glTranslated(0.0, -0.5, 0.0);
+
+	glPushMatrix();//Lower arm draw
+	glTranslated(1.5, 0.5, 0.0);
+	glRotated(90, 1.0, 0.0, 0.0);
+	drawCylinder(2, 0.4, 0.4);
+	glPopMatrix();
+	glPushMatrix();//left hand
+	glTranslated(1.5, -1.5, 0.0);
+	drawSphere(0.5);
+	glPopMatrix();
+	glPopMatrix();//lower arm end
+	glPopMatrix();//right arm end
+	glPopMatrix();//Upper body end
+
+	glPushMatrix();//lower body begin
+	glRotated(VAL(LOWER_BODY_ROTATE), 0.0, 1.0, 0.0);
+	glPushMatrix();//hip
+	glRotated(30, 0.0, 1.0, 0.0);
+	for (int i = 0; i != 6; i++) {
+		drawTriangle(0, -0.75, 0, 0.8*sin(i*PI / 3), -0.75, 0.8*cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3));
+		drawTriangle(sin(i*PI/3), 0, cos(i*PI/3), 0.8*sin(i*PI / 3), -0.75, 0.8*cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3));
+		drawTriangle(sin(i*PI / 3), 0, cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3), sin((i+1)*PI / 3), 0, cos((i+1)*PI / 3));
+	}
+	glPopMatrix();
+
+	glPushMatrix();//Joints connecting legs and lower body
+	glTranslated(-0.5, -0.5, 0);
+	drawSphere(0.5);
+	glTranslated(1, 0, 0);
+	drawSphere(0.5);
+	glPopMatrix();
+
+	glPushMatrix();//Left leg begin
+	glTranslated(-0.5, -0.5, 0);//Upper leg rotate
+	glRotated(-VAL(LEFT_UPPER_LEG_ROTATEX), 1.0, 0.0, 0.0);
+	glRotated(-VAL(LEFT_UPPER_LEG_ROTATEZ), 0.0, 0.0, 1.0);
+	glTranslated(0.5, 0.5, 0);
+
+	glPushMatrix();//Upper leg
+	glTranslated(-0.5, -0.5, 0);
+	glRotated(90, 1.0, 0.0, 0.0);
+	drawCylinder(2, 0.4, 0.4);
+	glPopMatrix();
+
+	glPushMatrix();//Joint
+	glTranslated(-0.5, -2.5, 0);
+	drawSphere(0.5);
+	glPopMatrix();
+
+	glPushMatrix();//Lower leg begin
+	glTranslated(0.0, -2.5, 0.0);//Lower leg rotate
+	glRotated(-VAL(LEFT_LOWER_LEG_ROTATE), 1.0, 0.0, 0.0);
+	glTranslated(0.0, 2.5, 0.0);
+
+	glPushMatrix();//Lower leg draw
+	glTranslated(-0.5, -2.5, 0.0);
+	glRotated(90, 1.0, 0.0, 0.0);
+	drawCylinder(3, 0.4, 0.4);
+	glPopMatrix();
+	glPushMatrix();//left foot
+	glTranslated(-0.5, -5.5, 0.0);
+	drawSphere(0.5);
+	glPopMatrix();
+	glPopMatrix();//lower leg end
+
+	glPopMatrix();//left leg end
+
+	glPushMatrix();//Right leg begin
+	glTranslated(0.5, -0.5, 0);//Upper leg rotate
+	glRotated(-VAL(RIGHT_UPPER_LEG_ROTATEX), 1.0, 0.0, 0.0);
+	glRotated(-VAL(RIGHT_UPPER_LEG_ROTATEZ), 0.0, 0.0, 1.0);
+	glTranslated(-0.5, 0.5, 0);
+
+	glPushMatrix();//Upper leg
+	glTranslated(0.5, -0.5, 0);
+	glRotated(90, 1.0, 0.0, 0.0);
+	drawCylinder(2, 0.4, 0.4);
+	glPopMatrix();
+
+	glPushMatrix();//Joint
+	glTranslated(0.5, -2.5, 0);
+	drawSphere(0.5);
+	glPopMatrix();
+
+	glPushMatrix();//Lower leg begin
+	glTranslated(0.0, -2.5, 0.0);//Lower leg rotate
+	glRotated(-VAL(RIGHT_LOWER_LEG_ROTATE), 1.0, 0.0, 0.0);
+	glTranslated(0.0, 2.5, 0.0);
+
+	glPushMatrix();//Lower leg draw
+	glTranslated(0.5, -2.5, 0.0);
+	glRotated(90, 1.0, 0.0, 0.0);
+	drawCylinder(3, 0.4, 0.4);
+	glPopMatrix();
+	glPushMatrix();//Right foot
+	glTranslated(0.5, -5.5, 0.0);
+	drawSphere(0.5);
+	glPopMatrix();
+	glPopMatrix();//lower leg end
+
+	glPopMatrix();//left leg end
+	
+	glPopMatrix();//lower body end
+
+	glPopMatrix();//Whole model end
+	
+
 }
 
 int main()
@@ -79,9 +281,23 @@ int main()
     controls[XPOS] = ModelerControl("X Position", -5, 5, 0.1f, 0);
     controls[YPOS] = ModelerControl("Y Position", 0, 5, 0.1f, 0);
     controls[ZPOS] = ModelerControl("Z Position", -5, 5, 0.1f, 0);
-    controls[HEIGHT] = ModelerControl("Height", 1, 2.5, 0.1f, 1);
-	controls[ROTATE] = ModelerControl("Rotate", -135, 135, 1, 0);
-
+ 	controls[LIGHT_POSITION_X] = ModelerControl("light0 position x", -5, 5, 0.1f, 4);
+	controls[LIGHT_POSITION_Y] = ModelerControl("light0 position y", -5, 5, 0.1f, 2);
+	controls[LIGHT_POSITION_Z] = ModelerControl("light0 position z", -5, 5, 0.1f, -4);
+	controls[UPPER_BODY_ROTATE] = ModelerControl("Upper Body Rotate", -90, 90, 1, 0);
+	controls[LOWER_BODY_ROTATE] = ModelerControl("Lower Body Rotate", -90, 90, 1, 0);
+	controls[LEFT_UPPER_ARM_ROTATEX] = ModelerControl("Left Arm Rotate X", -135, 135, 1, 0);
+	controls[LEFT_UPPER_ARM_ROTATEZ] = ModelerControl("Left Arm Rotate Z", -135, 135, 1, 0);
+	controls[RIGHT_UPPER_ARM_ROTATEX] = ModelerControl("Right Arm Rotate X", -135, 135, 1, 0);
+	controls[RIGHT_UPPER_ARM_ROTATEZ] = ModelerControl("Right Arm Rotate Z", -135, 135, 1, 0);
+	controls[LEFT_LOWER_ARM_ROTATE] = ModelerControl("Left Fore Arm Rotate", -135, 135, 1, 0);
+	controls[RIGHT_LOWER_ARM_ROTATE] = ModelerControl("Right Fore Arm Rotate", -135, 135, 1, 0);
+	controls[LEFT_UPPER_LEG_ROTATEX] = ModelerControl("Left Leg Rotate X", -135, 135, 1, 0);
+	controls[LEFT_UPPER_LEG_ROTATEZ] = ModelerControl("Left Leg Rotate Z", -135, 135, 1, 0);
+	controls[RIGHT_UPPER_LEG_ROTATEX] = ModelerControl("Right Leg Rotate X", -135, 135, 1, 0);
+	controls[RIGHT_UPPER_LEG_ROTATEZ] = ModelerControl("Right Leg Rotate Z", -135, 135, 1, 0);
+	controls[LEFT_LOWER_LEG_ROTATE] = ModelerControl("Left Fore Leg Rotate", -135, 135, 1, 0);
+	controls[RIGHT_LOWER_LEG_ROTATE] = ModelerControl("Right Fore Leg Rotate", -135, 135, 1, 0);
     ModelerApplication::Instance()->Init(&createSampleModel, controls, NUMCONTROLS);
     return ModelerApplication::Instance()->Run();
 }

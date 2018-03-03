@@ -82,6 +82,7 @@ static GLfloat lightDiffuse1[]  = { 1, 1, 1, 1 };
 
 void ModelerView::draw()
 {
+
     if (!valid())
     {
         glShadeModel( GL_SMOOTH );
