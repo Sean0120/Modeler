@@ -23,6 +23,7 @@ enum SampleModelControls
 	LIGHT_POSITION_Z,
 	Level_OF_DETAILS,
 	SAMPLE_FOG,
+	TEXTURE,
 	NUMCONTROLS
 };
 

@@ -4,7 +4,7 @@
 // handle MS bitmap I/O. For portability, we don't use the data structure defined in Windows.h
 // However, there is some strange thing, the side of our structure is different from what it 
 // should though we define it in the same way as MS did. So, there is a hack, we use the hardcoded
-// constanr, 14, instead of the sizeof to calculate the size of the structure.
+// constant, 14, instead of the sizeof to calculate the size of the structure.
 // You are not supposed to worry about this part. However, I will appreciate if you find out the
 // reason and let me know. Thanks.
 //

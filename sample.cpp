@@ -4,14 +4,10 @@
 #include "modelerapp.h"
 #include "modelerdraw.h"
 #include <FL/gl.h>
-
 #include "modelerglobals.h"
-
 #include "camera.h"
-
 #include <FL/Fl.H>
 #include <FL/Fl_Gl_Window.h>
-
 #include <GL/glu.h>
 #include <cstdio>
 #include <math.h>
@@ -47,6 +43,7 @@ void SampleModel::draw()
 		glEnable(GL_LIGHT0);
 		glEnable(GL_LIGHT1);
 		glEnable(GL_NORMALIZE);
+		loadImage();
 	}
 	if (VAL(SAMPLE_FOG) == 1) {
 		SampleFog();
@@ -213,9 +210,17 @@ void SampleModel::draw()
 			glPushMatrix();//hip
 			glRotated(30, 0.0, 1.0, 0.0);
 			for (int i = 0; i != 6; i++) {
-				drawTriangle(0, -0.75, 0, 0.8*sin(i*PI / 3), -0.75, 0.8*cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3));
-				drawTriangle(sin(i*PI/3), 0, cos(i*PI/3), 0.8*sin(i*PI / 3), -0.75, 0.8*cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3));
-				drawTriangle(sin(i*PI / 3), 0, cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3), sin((i+1)*PI / 3), 0, cos((i+1)*PI / 3));
+				if (VAL(TEXTURE) == 0) {
+					//glDisable(GL_TEXTURE_2D);
+					drawTriangle(0, -0.75, 0, 0.8*sin(i*PI / 3), -0.75, 0.8*cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3));
+					drawTriangle(sin(i*PI / 3), 0, cos(i*PI / 3), 0.8*sin(i*PI / 3), -0.75, 0.8*cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3));
+					drawTriangle(sin(i*PI / 3), 0, cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3), sin((i + 1)*PI / 3), 0, cos((i + 1)*PI / 3));
+				}
+				if (VAL(TEXTURE) == 1) {
+					drawTriangleWithTex(0, -0.75, 0, 0.8*sin(i*PI / 3), -0.75, 0.8*cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3));
+					drawTriangleWithTex(sin(i*PI / 3), 0, cos(i*PI / 3), 0.8*sin(i*PI / 3), -0.75, 0.8*cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3));
+					drawTriangleWithTex(sin(i*PI / 3), 0, cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3), sin((i + 1)*PI / 3), 0, cos((i + 1)*PI / 3));
+				}
 			}
 			glPopMatrix();
 		}
@@ -348,6 +353,7 @@ int main()
 	controls[RIGHT_LOWER_LEG_ROTATE] = ModelerControl("Right Fore Leg Rotate", -135, 135, 1, 0);
 	controls[SAMPLE_FOG] = ModelerControl("sample fog effect", 0, 1, 1, 0);
 	controls[Level_OF_DETAILS] = ModelerControl("levels of details", 1, 4, 1, 4);
+	controls[TEXTURE] = ModelerControl("Using Texture", 0, 1, 1, 0);
     ModelerApplication::Instance()->Init(&createSampleModel, controls, NUMCONTROLS);
     return ModelerApplication::Instance()->Run();
 }

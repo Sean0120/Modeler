@@ -18,6 +18,7 @@
 #include <cstdio>
 #include <math.h>
 #include"SampleModel.h"
+
 // To make a SampleModel, we inherit off of ModelerView
 class SampleModel : public ModelerView
 {
@@ -27,6 +28,11 @@ public:
 
 	virtual void draw();
 	void SampleFog();
+	unsigned char*	m_ucBitmap;
+	int loadImage();
+	void drawTriangleWithTex(double x1, double y1, double z1,
+		double x2, double y2, double z2,
+		double x3, double y3, double z3);
 };
 
 #endif // !SAMPLEMODEL
