@@ -24,7 +24,10 @@ class SampleModel : public ModelerView
 {
 public:
 	SampleModel(int x, int y, int w, int h, char *label)
-		: ModelerView(x, y, w, h, label) { }
+		: ModelerView(x, y, w, h, label) {
+		Additional_Angle = 0;
+		
+	}
 
 	virtual void draw();
 	void SampleFog();
@@ -33,6 +36,8 @@ public:
 	void drawTriangleWithTex(double x1, double y1, double z1,
 		double x2, double y2, double z2,
 		double x3, double y3, double z3);
+	int Additional_Angle;
+	int handle(int event);
 };
 
 #endif // !SAMPLEMODEL

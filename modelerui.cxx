@@ -60,7 +60,7 @@ if (filename)
 //	while (!m_modelerWindow->shown());
 //	m_modelerView->draw();
 	m_modelerView->make_current();
-m_modelerView->draw();
+	m_modelerView->draw();
 	
 		
 	unsigned char *imageBuffer = new unsigned char[3*w*h];
@@ -238,7 +238,6 @@ inline void ModelerUserInterface::cb_Focus_i(Fl_Menu_*, void*) {
 void ModelerUserInterface::cb_Focus(Fl_Menu_* o, void* v) {
 	((ModelerUserInterface*)(o->parent()->user_data()))->cb_Focus_i(o,v);
 }
-
 inline void ModelerUserInterface::cb_m_controlsAnimOnMenu_i(Fl_Menu_*, void*) {
   ModelerApplication::Instance()->m_animating = (m_controlsAnimOnMenu->value() == 0) ? false : true;
 }
@@ -293,7 +292,7 @@ void ModelerUserInterface::cb_m_modelerWindow(Fl_Window* o, void* v) {
 
 ModelerUserInterface::ModelerUserInterface() {
   Fl_Window* w;
-  { Fl_Window* o = m_controlsWindow = new Fl_Window(395, 326, "CS 341 Modeler (SP02)");
+  { Fl_Window* o = m_controlsWindow = new Fl_Window(395, 326, "CS 4411 Modeler (SP02)");
     w = o;
     o->callback((Fl_Callback*)cb_m_controlsWindow, (void*)(this));
     o->when(FL_WHEN_NEVER);

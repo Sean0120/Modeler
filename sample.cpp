@@ -12,6 +12,7 @@
 #include <cstdio>
 #include <math.h>
 #include"SampleModel.h"
+#include "modelerui.h"
 const float PI = 3.14159265f;
 
 
@@ -76,6 +77,14 @@ void SampleModel::draw()
 
 	setAmbientColor(.1f, .1f, .1f);
 	setDiffuseColor(COLOR_GREEN);
+	if (ModelerUserInterface::m_controlsAnimOnMenu->value() == 0) {
+		Additional_Angle = 0;
+	}
+	else {
+		Additional_Angle += 3;
+		Additional_Angle %= 360;
+	}
+	
 {
 	glPushMatrix();//Whole model begin
 	glTranslated(VAL(XPOS), VAL(YPOS), VAL(ZPOS));
@@ -83,7 +92,7 @@ void SampleModel::draw()
 	
 	{	
 		glPushMatrix();//Upper body begin
-		glRotated(VAL(UPPER_BODY_ROTATE), 0.0, 1.0, 0.0);
+		glRotated(VAL(UPPER_BODY_ROTATE) + Additional_Angle, 0.0, 1.0, 0.0);
 		{
 			//Main body
 			glPushMatrix();

@@ -42,6 +42,9 @@
     <ClCompile Include="loadImage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="new_handle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bitmap.h">
