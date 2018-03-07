@@ -24,6 +24,9 @@ enum SampleModelControls
 	Level_OF_DETAILS,
 	SAMPLE_FOG,
 	TEXTURE,
+	WHOLE_SCALE_X,
+	
+	WHOLE_SCALE_Z,
 	NUMCONTROLS
 };
 

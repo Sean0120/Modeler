@@ -97,68 +97,68 @@ void SampleModel::draw()
 			//Main body
 			glPushMatrix();
 			glRotated(-90, 1.0, 0, 0);
-			drawCylinder(4, 1, 1);
+			drawCylinder(4 * VAL(WHOLE_SCALE_Z) , 1 * VAL(WHOLE_SCALE_X), 1 *VAL(WHOLE_SCALE_X));
 			glPopMatrix();
 		}
 		{
 			//Head
 			glPushMatrix();
-			glTranslated(0, 4.85, 0);
-			drawSphere(0.85);
+			glTranslated(0, 0.85* VAL(WHOLE_SCALE_X) + 4 * VAL(WHOLE_SCALE_Z), 0);
+			drawSphere(0.85* VAL(WHOLE_SCALE_X));
 			glPopMatrix();
 		}
 		{
 			//Joints connecting upper arm and main body
 			glPushMatrix();
-			glTranslated(-1.5, 3.5, 0);
-			drawSphere(0.5);
+			glTranslated(-1.5* VAL(WHOLE_SCALE_X), 4* VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
+			drawSphere(0.5*VAL(WHOLE_SCALE_X));
 			glPopMatrix();
 		}
 		{
 			glPushMatrix();
-			glTranslated(1.5, 3.5, 0);
-			drawSphere(0.5);
+			glTranslated(1.5* VAL(WHOLE_SCALE_X), 4 * VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
+			drawSphere(0.5*VAL(WHOLE_SCALE_X));
 			glPopMatrix();
 		}
 		if(VAL(Level_OF_DETAILS) > 1)
 		{
 			glPushMatrix();//Left arm begin
-			glTranslated(-1.5, 3.5, 0);//Upper arm rotate
+			glTranslated(-1.5* VAL(WHOLE_SCALE_X), 4 * VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
 			glRotated(-VAL(LEFT_UPPER_ARM_ROTATEX), 1.0, 0.0, 0.0);
 			glRotated(-VAL(LEFT_UPPER_ARM_ROTATEZ), 0.0, 0.0, 1.0);
-			glTranslated(1.5, -3.5, 0);
+			glTranslated(1.5* VAL(WHOLE_SCALE_X), -4 * VAL(WHOLE_SCALE_Z) + 0.5*VAL(WHOLE_SCALE_X), 0);
 			{
 		
 				glPushMatrix();//Upper arm
-				glTranslated(-1.5, 3.5, 0);
+				glTranslated(-1.5* VAL(WHOLE_SCALE_X), 4 * VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
 				glRotated(90, 1.0, 0.0, 0.0);
-				drawCylinder(3, 0.4, 0.4);
+				drawCylinder(4 * VAL(WHOLE_SCALE_Z) - VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
 				glPopMatrix();
 			}
 			{
 				glPushMatrix();//Joint
-				glTranslated(-1.5, 0.5, 0);
-				drawSphere(0.5);
+				glTranslated(-1.5* VAL(WHOLE_SCALE_X),  0.5*VAL(WHOLE_SCALE_X), 0);
+				drawSphere(0.5* VAL(WHOLE_SCALE_X));
 				glPopMatrix();
 			}
 			if(VAL(Level_OF_DETAILS) > 2)
 			{
 				glPushMatrix();//Lower arm begin
-				glTranslated(0.0, 0.5, 0.0);//Lower arm rotate
+				glTranslated(0.0, 0.5*VAL(WHOLE_SCALE_X), 0.0);//Lower arm rotate
 				glRotated(-VAL(LEFT_LOWER_ARM_ROTATE), 1.0, 0.0, 0.0);
-				glTranslated(0.0, -0.5, 0.0);
+				glTranslated(0.0, -0.5*VAL(WHOLE_SCALE_X), 0.0);
 				{
 					glPushMatrix();//Lower arm draw
-					glTranslated(-1.5, 0.5, 0.0);
+					glTranslated(-1.5 * VAL(WHOLE_SCALE_X), 0.5 * VAL(WHOLE_SCALE_X), 0.0);
 					glRotated(90, 1.0, 0.0, 0.0);
-					drawCylinder(2, 0.4, 0.4);
+					drawCylinder(2* VAL(WHOLE_SCALE_Z), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
 					glPopMatrix();
 				}
 				if (VAL(Level_OF_DETAILS) > 3)
 				{
 					glPushMatrix();//left hand
-					glTranslated(-1.5, -1.5, 0.0);
-					drawSphere(0.5);
+					glTranslated(-1.5 * VAL(WHOLE_SCALE_X),0.5*VAL(WHOLE_SCALE_X)- 2 * VAL(WHOLE_SCALE_Z) , 0.0);
+					drawSphere(0.5*VAL(WHOLE_SCALE_X));
 					glPopMatrix();
 				}
 				glPopMatrix();//lower arm end
@@ -168,41 +168,42 @@ void SampleModel::draw()
 		if (VAL(Level_OF_DETAILS) > 1)
 		{
 			glPushMatrix();//right arm begin
-			glTranslated(1.5, 3.5, 0);//Upper arm rotate
+			//Upper arm rotate
+			glTranslated(1.5* VAL(WHOLE_SCALE_X), 4 * VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
 			glRotated(-VAL(RIGHT_UPPER_ARM_ROTATEX), 1.0, 0.0, 0.0);
 			glRotated(-VAL(RIGHT_UPPER_ARM_ROTATEZ), 0.0, 0.0, 1.0);
-			glTranslated(-1.5, -3.5, 0);
+			glTranslated(-1.5* VAL(WHOLE_SCALE_X), -4 * VAL(WHOLE_SCALE_Z) + 0.5*VAL(WHOLE_SCALE_X), 0);
 			{
 				glPushMatrix();//Upper arm
-				glTranslated(1.5, 3.5, 0);
+				glTranslated(1.5* VAL(WHOLE_SCALE_X), 4 * VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
 				glRotated(90, 1.0, 0.0, 0.0);
-				drawCylinder(3, 0.4, 0.4);
+				drawCylinder(4 * VAL(WHOLE_SCALE_Z) - VAL(WHOLE_SCALE_X), 0.4*VAL(WHOLE_SCALE_X), 0.4*VAL(WHOLE_SCALE_X));
 				glPopMatrix();
 			}
 			{
 				glPushMatrix();//Joint
-				glTranslated(1.5, 0.5, 0);
-				drawSphere(0.5);
+				glTranslated(1.5* VAL(WHOLE_SCALE_X), 0.5*VAL(WHOLE_SCALE_X), 0);
+				drawSphere(0.5* VAL(WHOLE_SCALE_X));
 				glPopMatrix();
 			}
 			if (VAL(Level_OF_DETAILS) > 2)
 			{
 				glPushMatrix();//Lower arm begin
-				glTranslated(0.0, 0.5, 0.0);//Lower arm rotate
+				glTranslated(0.0, 0.5*VAL(WHOLE_SCALE_X), 0.0);//Lower arm rotate
 				glRotated(-VAL(RIGHT_LOWER_ARM_ROTATE), 1.0, 0.0, 0.0);
-				glTranslated(0.0, -0.5, 0.0);
+				glTranslated(0.0, -0.5*VAL(WHOLE_SCALE_X), 0.0);
 				{
 					glPushMatrix();//Lower arm draw
-					glTranslated(1.5, 0.5, 0.0);
+					glTranslated(1.5 * VAL(WHOLE_SCALE_X), 0.5 * VAL(WHOLE_SCALE_X), 0.0);
 					glRotated(90, 1.0, 0.0, 0.0);
-					drawCylinder(2, 0.4, 0.4);
+					drawCylinder(2 * VAL(WHOLE_SCALE_Z), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
 					glPopMatrix();
 				}
 				if (VAL(Level_OF_DETAILS) > 3)
 				{
 					glPushMatrix();//left hand
-					glTranslated(1.5, -1.5, 0.0);
-					drawSphere(0.5);
+					glTranslated(1.5 * VAL(WHOLE_SCALE_X), 0.5*VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);
+					drawSphere(0.5*VAL(WHOLE_SCALE_X));
 					glPopMatrix();
 				}
 				glPopMatrix();//lower arm end
@@ -221,63 +222,63 @@ void SampleModel::draw()
 			for (int i = 0; i != 6; i++) {
 				if (VAL(TEXTURE) == 0) {
 					//glDisable(GL_TEXTURE_2D);
-					drawTriangle(0, -0.75, 0, 0.8*sin(i*PI / 3), -0.75, 0.8*cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3));
-					drawTriangle(sin(i*PI / 3), 0, cos(i*PI / 3), 0.8*sin(i*PI / 3), -0.75, 0.8*cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3));
-					drawTriangle(sin(i*PI / 3), 0, cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3), sin((i + 1)*PI / 3), 0, cos((i + 1)*PI / 3));
+					drawTriangle(0									, -0.75* VAL(WHOLE_SCALE_X)	, 0									, 0.8*sin(i*PI / 3)* VAL(WHOLE_SCALE_X), -0.75* VAL(WHOLE_SCALE_X), 0.8*cos(i*PI / 3)* VAL(WHOLE_SCALE_X), 0.8*sin((i + 1)*PI / 3)* VAL(WHOLE_SCALE_X), -0.75* VAL(WHOLE_SCALE_X), 0.8*cos((i + 1)*PI / 3)* VAL(WHOLE_SCALE_X));
+					drawTriangle(sin(i*PI / 3)* VAL(WHOLE_SCALE_X)	, 0							, cos(i*PI / 3)* VAL(WHOLE_SCALE_X)	, 0.8*sin(i*PI / 3)* VAL(WHOLE_SCALE_X), -0.75* VAL(WHOLE_SCALE_X), 0.8*cos(i*PI / 3)* VAL(WHOLE_SCALE_X), 0.8*sin((i + 1)*PI / 3)* VAL(WHOLE_SCALE_X), -0.75* VAL(WHOLE_SCALE_X), 0.8*cos((i + 1)*PI / 3)* VAL(WHOLE_SCALE_X));
+					drawTriangle(sin(i*PI / 3)* VAL(WHOLE_SCALE_X)	, 0							, cos(i*PI / 3)* VAL(WHOLE_SCALE_X)	, 0.8*sin((i + 1)*PI / 3)* VAL(WHOLE_SCALE_X), -0.75* VAL(WHOLE_SCALE_X), 0.8*cos((i + 1)*PI / 3)* VAL(WHOLE_SCALE_X), sin((i + 1)*PI / 3)* VAL(WHOLE_SCALE_X), 0, cos((i + 1)*PI / 3)* VAL(WHOLE_SCALE_X));
 				}
 				if (VAL(TEXTURE) == 1) {
-					drawTriangleWithTex(0, -0.75, 0, 0.8*sin(i*PI / 3), -0.75, 0.8*cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3));
-					drawTriangleWithTex(sin(i*PI / 3), 0, cos(i*PI / 3), 0.8*sin(i*PI / 3), -0.75, 0.8*cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3));
-					drawTriangleWithTex(sin(i*PI / 3), 0, cos(i*PI / 3), 0.8*sin((i + 1)*PI / 3), -0.75, 0.8*cos((i + 1)*PI / 3), sin((i + 1)*PI / 3), 0, cos((i + 1)*PI / 3));
+					drawTriangleWithTex(0, -0.75* VAL(WHOLE_SCALE_X), 0, 0.8*sin(i*PI / 3)* VAL(WHOLE_SCALE_X), -0.75* VAL(WHOLE_SCALE_X), 0.8*cos(i*PI / 3)* VAL(WHOLE_SCALE_X), 0.8*sin((i + 1)*PI / 3)* VAL(WHOLE_SCALE_X), -0.75* VAL(WHOLE_SCALE_X), 0.8*cos((i + 1)*PI / 3)* VAL(WHOLE_SCALE_X));
+					drawTriangleWithTex(sin(i*PI / 3)* VAL(WHOLE_SCALE_X), 0, cos(i*PI / 3)* VAL(WHOLE_SCALE_X), 0.8*sin(i*PI / 3)* VAL(WHOLE_SCALE_X), -0.75* VAL(WHOLE_SCALE_X), 0.8*cos(i*PI / 3)* VAL(WHOLE_SCALE_X), 0.8*sin((i + 1)*PI / 3)* VAL(WHOLE_SCALE_X), -0.75* VAL(WHOLE_SCALE_X), 0.8*cos((i + 1)*PI / 3)* VAL(WHOLE_SCALE_X));
+					drawTriangleWithTex(sin(i*PI / 3)* VAL(WHOLE_SCALE_X), 0, cos(i*PI / 3)* VAL(WHOLE_SCALE_X), 0.8*sin((i + 1)*PI / 3)* VAL(WHOLE_SCALE_X), -0.75* VAL(WHOLE_SCALE_X), 0.8*cos((i + 1)*PI / 3)* VAL(WHOLE_SCALE_X), sin((i + 1)*PI / 3)* VAL(WHOLE_SCALE_X), 0, cos((i + 1)*PI / 3)* VAL(WHOLE_SCALE_X));
 				}
 			}
 			glPopMatrix();
 		}
 		{
 			glPushMatrix();//Joints connecting legs and upper body
-			glTranslated(-0.5, -0.5, 0);
-			drawSphere(0.5);
-			glTranslated(1, 0, 0);
-			drawSphere(0.5);
+			glTranslated(-0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X), 0);
+			drawSphere(0.5* VAL(WHOLE_SCALE_X));
+			glTranslated(1 * VAL(WHOLE_SCALE_X), 0, 0);
+			drawSphere(0.5* VAL(WHOLE_SCALE_X));
 			glPopMatrix();
 		}
 		if (VAL(Level_OF_DETAILS) > 2)
 		{
 			glPushMatrix();//Left leg begin
-			glTranslated(-0.5, -0.5, 0);//Upper leg rotate
+			glTranslated(-0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X), 0);//Upper leg rotate
 			glRotated(-VAL(LEFT_UPPER_LEG_ROTATEX), 1.0, 0.0, 0.0);
 			glRotated(-VAL(LEFT_UPPER_LEG_ROTATEZ), 0.0, 0.0, 1.0);
-			glTranslated(0.5, 0.5, 0);
+			glTranslated(0.5* VAL(WHOLE_SCALE_X), 0.5* VAL(WHOLE_SCALE_X), 0);
 			{
 				glPushMatrix();//Upper leg
-				glTranslated(-0.5, -0.5, 0);
+				glTranslated(-0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X), 0);
 				glRotated(90, 1.0, 0.0, 0.0);
-				drawCylinder(2, 0.4, 0.4);
+				drawCylinder(2 * VAL(WHOLE_SCALE_Z), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
 				glPopMatrix();
 			}
 			{
 				glPushMatrix();//Joint
-				glTranslated(-0.5, -2.5, 0);
-				drawSphere(0.5);
+				glTranslated(-0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0);
+				drawSphere(0.5* VAL(WHOLE_SCALE_X));
 				glPopMatrix();
 			}
 			if (VAL(Level_OF_DETAILS) > 3)
 			{
 				glPushMatrix();//Lower leg begin
-				glTranslated(0.0, -2.5, 0.0);//Lower leg rotate
+				glTranslated(0.0, -0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);//Lower leg rotate
 				glRotated(-VAL(LEFT_LOWER_LEG_ROTATE), 1.0, 0.0, 0.0);
-				glTranslated(0.0, 2.5, 0.0);
+				glTranslated(0.0, 0.5* VAL(WHOLE_SCALE_X) + 2 * VAL(WHOLE_SCALE_Z), 0.0);
 				{
 					glPushMatrix();//Lower leg draw
-					glTranslated(-0.5, -2.5, 0.0);
+					glTranslated(-0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);
 					glRotated(90, 1.0, 0.0, 0.0);
-					drawCylinder(3, 0.4, 0.4);
+					drawCylinder(3 * VAL(WHOLE_SCALE_Z), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
 					glPopMatrix();
 				}
 				{
 					glPushMatrix();//left foot
-					glTranslated(-0.5, -5.5, 0.0);
-					drawSphere(0.5);
+					glTranslated(-0.5* VAL(WHOLE_SCALE_X), -3 * VAL(WHOLE_SCALE_Z) - 0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);
+					drawSphere(0.5* VAL(WHOLE_SCALE_X));
 					glPopMatrix();
 				}
 				glPopMatrix();//lower leg end
@@ -287,40 +288,40 @@ void SampleModel::draw()
 		if (VAL(Level_OF_DETAILS) > 2)
 		{
 			glPushMatrix();//Right leg begin
-			glTranslated(0.5, -0.5, 0);//Upper leg rotate
+			glTranslated(0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X), 0);//Upper leg rotate
 			glRotated(-VAL(RIGHT_UPPER_LEG_ROTATEX), 1.0, 0.0, 0.0);
 			glRotated(-VAL(RIGHT_UPPER_LEG_ROTATEZ), 0.0, 0.0, 1.0);
-			glTranslated(-0.5, 0.5, 0);
+			glTranslated(-0.5* VAL(WHOLE_SCALE_X), 0.5* VAL(WHOLE_SCALE_X), 0);
 			{
 				glPushMatrix();//Upper leg
-				glTranslated(0.5, -0.5, 0);
+				glTranslated(0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X), 0);
 				glRotated(90, 1.0, 0.0, 0.0);
-				drawCylinder(2, 0.4, 0.4);
+				drawCylinder(2 * VAL(WHOLE_SCALE_Z), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
 				glPopMatrix();
 			}
 			{
 				glPushMatrix();//Joint
-				glTranslated(0.5, -2.5, 0);
-				drawSphere(0.5);
+				glTranslated(0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0);
+				drawSphere(0.5* VAL(WHOLE_SCALE_X));
 				glPopMatrix();
 			}
 			if (VAL(Level_OF_DETAILS) > 3)
 			{
 				glPushMatrix();//Lower leg begin
-				glTranslated(0.0, -2.5, 0.0);//Lower leg rotate
+				glTranslated(0.0, -0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);//Lower leg rotate
 				glRotated(-VAL(RIGHT_LOWER_LEG_ROTATE), 1.0, 0.0, 0.0);
-				glTranslated(0.0, 2.5, 0.0);
+				glTranslated(0.0, 0.5* VAL(WHOLE_SCALE_X) + 2 * VAL(WHOLE_SCALE_Z), 0.0);
 				{
 					glPushMatrix();//Lower leg draw
-					glTranslated(0.5, -2.5, 0.0);
+					glTranslated(0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);
 					glRotated(90, 1.0, 0.0, 0.0);
-					drawCylinder(3, 0.4, 0.4);
+					drawCylinder(  3 * VAL(WHOLE_SCALE_Z), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
 					glPopMatrix();
 				}
 				{
 					glPushMatrix();//Right foot
-					glTranslated(0.5, -5.5, 0.0);
-					drawSphere(0.5);
+					glTranslated(0.5* VAL(WHOLE_SCALE_X), -3 * VAL(WHOLE_SCALE_Z) - 0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);
+					drawSphere(0.5* VAL(WHOLE_SCALE_X));
 					glPopMatrix();
 				}
 				glPopMatrix();//lower leg end
@@ -363,6 +364,8 @@ int main()
 	controls[SAMPLE_FOG] = ModelerControl("sample fog effect", 0, 1, 1, 0);
 	controls[Level_OF_DETAILS] = ModelerControl("levels of details", 1, 4, 1, 4);
 	controls[TEXTURE] = ModelerControl("Using Texture", 0, 1, 1, 0);
+	controls[WHOLE_SCALE_X] = ModelerControl("whole scale x", 0, 2, 0.01, 1.0);
+	controls[WHOLE_SCALE_Z] = ModelerControl("whole scale z", 0, 2, 0.01, 1.0);
     ModelerApplication::Instance()->Init(&createSampleModel, controls, NUMCONTROLS);
     return ModelerApplication::Instance()->Run();
 }
