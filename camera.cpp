@@ -4,7 +4,8 @@
 #include <gl/glu.h>
 
 #include "camera.h"
-
+#include "modelerglobals.h"
+#include "modelerapp.h"
 #pragma warning(push)
 #pragma warning(disable : 4244)
 
@@ -179,7 +180,13 @@ void Camera::applyViewingTransform() {
 
 	// Place the camera at mPosition, aim the camera at
 	// mLookAt, and twist the camera such that mUpVector is up
-	lookAt(mPosition, mLookAt, mUpVector);
+	if (VAL(FRAME_ALL) == 0) {
+		lookAt(mPosition, mLookAt, mUpVector);
+	}
+	else
+	{
+		lookAt(Vec3f(0, 0, 20), Vec3f(0, 0, 0), mUpVector);
+	}
 	/*gluLookAt(	mPosition[0], mPosition[1], mPosition[2],
 	mLookAt[0],   mLookAt[1],   mLookAt[2],
 	mUpVector[0], mUpVector[1], mUpVector[2]);*/

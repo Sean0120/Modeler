@@ -57,11 +57,20 @@ void SampleModel::draw()
 	glViewport(0, 0, w(), h());
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(30.0, float(w()) / float(h()), 1.0, 100.0);
-
+	if (VAL(FRAME_ALL)) {
+		//calculate the view angle
+		float max_d = max(5 * VAL(WHOLE_SCALE_Z) + VAL(WHOLE_SCALE_X), 4 * VAL(WHOLE_SCALE_Z) + 1.7 * VAL(WHOLE_SCALE_X));
+		float angle = atan(max_d / 20) / M_PI * 360;
+		gluPerspective( angle, float(w()) / float(h()), 1.0, 100.0);
+	}
+	else
+	{
+		gluPerspective(30.0, float(w()) / float(h()), 1.0, 100.0);
+	}
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 	m_camera->applyViewingTransform();
 	//get the light 0 position from the sliders
 	lightPosition0[0] = VAL(LIGHT_POSITION_X);
@@ -87,7 +96,13 @@ void SampleModel::draw()
 	
 {
 	glPushMatrix();//Whole model begin
+	if (VAL(FRAME_ALL)) {
+		glTranslated(0, 0, 0);
+	}
+	else
+	{
 	glTranslated(VAL(XPOS), VAL(YPOS), VAL(ZPOS));
+	}
 	//glTranslated(0, -1, 0);
 	
 	{	
@@ -366,6 +381,7 @@ int main()
 	controls[TEXTURE] = ModelerControl("Using Texture", 0, 1, 1, 0);
 	controls[WHOLE_SCALE_X] = ModelerControl("whole scale x", 0, 2, 0.01, 1.0);
 	controls[WHOLE_SCALE_Z] = ModelerControl("whole scale z", 0, 2, 0.01, 1.0);
+	controls[FRAME_ALL] = ModelerControl("Frame all", 0, 1, 1, 0);
     ModelerApplication::Instance()->Init(&createSampleModel, controls, NUMCONTROLS);
     return ModelerApplication::Instance()->Run();
 }

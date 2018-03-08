@@ -27,6 +27,7 @@ enum SampleModelControls
 	WHOLE_SCALE_X,
 	
 	WHOLE_SCALE_Z,
+	FRAME_ALL,
 	NUMCONTROLS
 };
 

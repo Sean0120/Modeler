@@ -1,8 +1,10 @@
 ﻿  sample.cpp
-d:\desktop\comp4411\modeler\sample.cpp(67): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-d:\desktop\comp4411\modeler\sample.cpp(68): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-d:\desktop\comp4411\modeler\sample.cpp(69): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-d:\desktop\comp4411\modeler\sample.cpp(367): warning C4305: 'argument': truncation from 'double' to 'float'
-d:\desktop\comp4411\modeler\sample.cpp(368): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\desktop\comp4411\modeler\sample.cpp(62): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\desktop\comp4411\modeler\sample.cpp(63): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\desktop\comp4411\modeler\sample.cpp(76): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+d:\desktop\comp4411\modeler\sample.cpp(77): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+d:\desktop\comp4411\modeler\sample.cpp(78): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+d:\desktop\comp4411\modeler\sample.cpp(382): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\desktop\comp4411\modeler\sample.cpp(383): warning C4305: 'argument': truncation from 'double' to 'float'
   modeler.vcxproj -> D:\Desktop\COMP4411\Modeler\.\Debug\modeler.exe
   modeler.vcxproj -> .\Debug/modeler.pdb (Full PDB)
