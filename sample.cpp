@@ -13,6 +13,7 @@
 #include <math.h>
 #include"SampleModel.h"
 #include "modelerui.h"
+#include "newdraw.h"
 const float PI = 3.14159265f;
 
 
@@ -67,6 +68,9 @@ void SampleModel::draw()
 	{
 		gluPerspective(30.0, float(w()) / float(h()), 1.0, 100.0);
 	}
+	//seng the value to camera
+	m_camera->height = h();
+	m_camera->width = w();
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -113,6 +117,14 @@ void SampleModel::draw()
 			glPushMatrix();
 			glRotated(-90, 1.0, 0, 0);
 			drawCylinder(4 * VAL(WHOLE_SCALE_Z) , 1 * VAL(WHOLE_SCALE_X), 1 *VAL(WHOLE_SCALE_X));
+			if (VAL(HAS_RING) == 1) {
+				glRotated(90, 1.0, 0, 0);
+				glTranslated(0.0, 6.0, 0.0);
+				drawTorus(0.8, 0.2);
+				glTranslated(0.0, -6.0, 0.0);
+				drawExtrudedSurface(f1, f3, f5, -2*M_PI, 2 * M_PI, f6, f5, f1, 0, 2);
+				drawRotationSurface(0, 1, 0, 0, 0, 0, f1, f2, f5, 0, 2);
+			}
 			glPopMatrix();
 		}
 		{
@@ -382,6 +394,8 @@ int main()
 	controls[WHOLE_SCALE_X] = ModelerControl("whole scale x", 0, 2, 0.01, 1.0);
 	controls[WHOLE_SCALE_Z] = ModelerControl("whole scale z", 0, 2, 0.01, 1.0);
 	controls[FRAME_ALL] = ModelerControl("Frame all", 0, 1, 1, 0);
+	controls[TWIST_CAMERA] = ModelerControl("enable to twist camera", 0, 1, 1, 0);
+	controls[HAS_RING] = ModelerControl("Has Ring", 0, 1, 1, 0);
     ModelerApplication::Instance()->Init(&createSampleModel, controls, NUMCONTROLS);
     return ModelerApplication::Instance()->Run();
 }

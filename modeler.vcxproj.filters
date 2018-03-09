@@ -77,5 +77,8 @@
     <ClInclude Include="SampleModel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="newdraw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,10 +2,12 @@
 #include <windows.h>
 #include <Fl/gl.h>
 #include <gl/glu.h>
-
+#include"SampleModel.h"
+#include"modelerui.h"
 #include "camera.h"
 #include "modelerglobals.h"
 #include "modelerapp.h"
+#include <math.h>
 #pragma warning(push)
 #pragma warning(disable : 4244)
 
@@ -92,12 +94,10 @@ void Camera::calculateViewingTransformParameters()
 	mPosition = Vec3f(0, 0, 0);
 	// grouped for (mat4 * vec3) ops instead of (mat4 * mat4) ops
 	mPosition = originXform * (azimXform * (elevXform * (dollyXform * mPosition)));
-
 	if (fmod((double)mElevation, 2.0*M_PI) < 3 * M_PI / 2 && fmod((double)mElevation, 2.0*M_PI) > M_PI / 2)
 		mUpVector = Vec3f(0, -1, 0);
 	else
 		mUpVector = Vec3f(0, 1, 0);
-
 	mDirtyTransform = false;
 }
 
@@ -110,7 +110,8 @@ Camera::Camera()
 
 	mLookAt = Vec3f(0, 0, 0);
 	mCurrentMouseAction = kActionNone;
-
+	width = 0;
+	height = 0;
 	calculateViewingTransformParameters();
 }
 
@@ -124,7 +125,6 @@ void Camera::clickMouse(MouseAction_t action, int x, int y)
 void Camera::dragMouse(int x, int y)
 {
 	Vec3f mouseDelta = Vec3f(x, y, 0.0f) - mLastMousePosition;
-	mLastMousePosition = Vec3f(x, y, 0.0f);
 
 	switch (mCurrentMouseAction)
 	{
@@ -161,10 +161,74 @@ void Camera::dragMouse(int x, int y)
 		break;
 	}
 	case kActionTwist:
-		// Not implemented
+	{
+		float pre_angle = 0;
+		float cur_angle = 0;
+		if (mLastMousePosition[0] - width/2 == 0)
+		{
+			if (height/2-mLastMousePosition[1] > 0)
+			{
+				pre_angle = 90;
+			}
+			else
+				pre_angle = 270;
+
+		}
+		else
+		{
+			if ((mLastMousePosition[0] - width / 2) > 0) 
+			{
+			float angle = atan((height / 2 - mLastMousePosition[1]) / (mLastMousePosition[0] - width / 2)) / M_PI * 180;
+			if (angle < 0)
+				angle += 360;
+			pre_angle = angle;
+			}
+			else
+			{
+				float angle = atan((height / 2 - mLastMousePosition[1]) / (mLastMousePosition[0] - width / 2)) / M_PI * 180;
+				angle += 180;
+				pre_angle = angle;
+			}
+		}
+
+		if (x - width / 2 == 0)
+		{
+			if (height / 2 -y > 0)
+			{
+				cur_angle = 90;
+			}
+			else
+				cur_angle = 270;
+
+		}
+		else
+		{
+			if ((x - width / 2) > 0)
+			{
+				float angle = atan(float(height / 2 - y) / (x - width / 2)) / M_PI * 180;
+		
+				if (angle < 0)
+					angle += 360;
+				cur_angle = angle;
+				
+			}
+			else
+			{
+				float angle = atan(float(height / 2 - y) / (x - width / 2)) / M_PI * 180;
+				angle += 180;
+				cur_angle = angle;
+			}
+
+		}
+		
+		mTwist += cur_angle - pre_angle;
+		//cout << mTwist << endl;
+		break;
+	}
 	default:
 		break;
 	}
+	mLastMousePosition = Vec3f(x, y, 0.0f);
 
 }
 
@@ -177,7 +241,10 @@ void Camera::releaseMouse(int x, int y)
 void Camera::applyViewingTransform() {
 	if (mDirtyTransform)
 		calculateViewingTransformParameters();
-
+	//chceck whether the mUPVector need chaning 
+	if (VAL(TWIST_CAMERA) == 1) {
+		mUpVector = Vec3f(cos((90 - mTwist)/180*M_PI), sin((90 - mTwist)/180*M_PI), 0);
+	}
 	// Place the camera at mPosition, aim the camera at
 	// mLookAt, and twist the camera such that mUpVector is up
 	if (VAL(FRAME_ALL) == 0) {
@@ -193,8 +260,6 @@ void Camera::applyViewingTransform() {
 }
 
 void Camera::lookAt(Vec3f eye, Vec3f at, Vec3f up) {
-
-
 	Vec3f tDir = Vec3f(at[0] - eye[0], at[1] - eye[1], at[2] - eye[2]);
 	float norm_tDir = sqrt(tDir[0] * tDir[0] + tDir[1] * tDir[1] + tDir[2] * tDir[2]);
 	tDir /= norm_tDir;

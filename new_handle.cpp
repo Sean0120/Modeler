@@ -15,17 +15,34 @@ int SampleModel::handle(int event)
 	{
 	case FL_PUSH:
 	{
-		switch (eventButton)
+		if (VAL(TWIST_CAMERA) == 0) {
+			switch (eventButton)
+			{
+			case kMouseRotationButton:
+				m_camera->clickMouse(kActionRotate, eventCoordX, eventCoordY);
+				break;
+			case kMouseTranslationButton:
+				m_camera->clickMouse(kActionTranslate, eventCoordX, eventCoordY);
+				break;
+			case kMouseZoomButton:
+				m_camera->clickMouse(kActionZoom, eventCoordX, eventCoordY);
+				break;
+			}
+		}
+		else
 		{
-		case kMouseRotationButton:
-			m_camera->clickMouse(kActionRotate, eventCoordX, eventCoordY);
-			break;
-		case kMouseTranslationButton:
-			m_camera->clickMouse(kActionTranslate, eventCoordX, eventCoordY);
-			break;
-		case kMouseZoomButton:
-			m_camera->clickMouse(kActionZoom, eventCoordX, eventCoordY);
-			break;
+			switch (eventButton)
+			{
+			case kMouseRotationButton:
+				m_camera->clickMouse(kActionTwist, eventCoordX, eventCoordY);
+				break;
+			case kMouseTranslationButton:
+				m_camera->clickMouse(kActionTranslate, eventCoordX, eventCoordY);
+				break;
+			case kMouseZoomButton:
+				m_camera->clickMouse(kActionZoom, eventCoordX, eventCoordY);
+				break;
+			}
 		}
 		// printf("push %d %d\n", eventCoordX, eventCoordY);
 	}

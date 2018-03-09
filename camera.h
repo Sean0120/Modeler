@@ -83,6 +83,9 @@ public:
 
 	// gluLookAt equivalent
 	void lookAt(Vec3f eye, Vec3f at, Vec3f up);
+	//variable for twist
+	int width;
+	int height;
 };
 
 #endif
