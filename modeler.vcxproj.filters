@@ -45,6 +45,9 @@
     <ClCompile Include="new_handle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lsystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bitmap.h">

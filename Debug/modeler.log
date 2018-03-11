@@ -1,3 +1,8 @@
-﻿  camera.cpp
+﻿  Lsystem.cpp
+d:\desktop\comp4411\modeler\samplemodel.h(32): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+d:\desktop\comp4411\modeler\lsystem.cpp(24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\desktop\comp4411\modeler\lsystem.cpp(27): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+d:\desktop\comp4411\modeler\lsystem.cpp(75): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\desktop\comp4411\modeler\lsystem.cpp(76): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   modeler.vcxproj -> D:\Desktop\COMP4411\Modeler\.\Debug\modeler.exe
   modeler.vcxproj -> .\Debug/modeler.pdb (Full PDB)

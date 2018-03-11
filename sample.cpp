@@ -108,7 +108,10 @@ void SampleModel::draw()
 	glTranslated(VAL(XPOS), VAL(YPOS), VAL(ZPOS));
 	}
 	//glTranslated(0, -1, 0);
-	
+	GenerateResult();
+	DrawTree();
+	if (VAL(ENABLE_LSYSTEM) == 1)
+		return;
 	{	
 		glPushMatrix();//Upper body begin
 		glRotated(VAL(UPPER_BODY_ROTATE) + Additional_Angle, 0.0, 1.0, 0.0);
@@ -396,6 +399,11 @@ int main()
 	controls[FRAME_ALL] = ModelerControl("Frame all", 0, 1, 1, 0);
 	controls[TWIST_CAMERA] = ModelerControl("enable to twist camera", 0, 1, 1, 0);
 	controls[HAS_RING] = ModelerControl("Has Ring", 0, 1, 1, 0);
+	controls[ENABLE_LSYSTEM] = ModelerControl("enable L system", 0, 1, 1, 0);
+	controls[LSYSTEM_DISTANCE] = ModelerControl("change the distance in L system", 0, 0.5, 0.01, 0.25);
+	controls[LSYSTEM_ANGLE] = ModelerControl("change the angle in L system", 0, 90, 1, 45);
+	controls[LSYSTEM_ITERATION] = ModelerControl("change the iteration number", 1, 4, 1, 1);
+	controls[LSYSTEM_REFRESH] = ModelerControl("refresh the L system",0,1,1,0);
     ModelerApplication::Instance()->Init(&createSampleModel, controls, NUMCONTROLS);
     return ModelerApplication::Instance()->Run();
 }

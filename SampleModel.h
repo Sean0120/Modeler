@@ -18,7 +18,9 @@
 #include <cstdio>
 #include <math.h>
 #include"SampleModel.h"
-
+#include <string>
+#include<ctime>
+#include<stdlib.h>
 // To make a SampleModel, we inherit off of ModelerView
 class SampleModel : public ModelerView
 {
@@ -26,7 +28,8 @@ public:
 	SampleModel(int x, int y, int w, int h, char *label)
 		: ModelerView(x, y, w, h, label) {
 		Additional_Angle = 0;
-		
+		refresh_L = 0;
+		srand(time(NULL));
 	}
 
 	virtual void draw();
@@ -38,6 +41,11 @@ public:
 		double x3, double y3, double z3);
 	int Additional_Angle;
 	int handle(int event);
+	//parameters and function for L system 
+	string FractalResult;
+	void GenerateResult();
+	void DrawTree();
+	int refresh_L;
 };
 
 #endif // !SAMPLEMODEL

@@ -158,6 +158,7 @@
     </ClCompile>
     <ClCompile Include="Fogcpp.cpp" />
     <ClCompile Include="loadImage.cpp" />
+    <ClCompile Include="Lsystem.cpp" />
     <ClCompile Include="modelerapp.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
