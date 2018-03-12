@@ -131,6 +131,8 @@ void SampleModel::draw()
 			glPopMatrix();
 		}
 		{
+			if(VAL(COLORFUL) == 1)
+				setDiffuseColor(COLOR_RED);
 			//Head
 			glPushMatrix();
 			glTranslated(0, 0.85* VAL(WHOLE_SCALE_X) + 4 * VAL(WHOLE_SCALE_Z), 0);
@@ -138,6 +140,8 @@ void SampleModel::draw()
 			glPopMatrix();
 		}
 		{
+			if (VAL(COLORFUL) == 1)
+				setDiffuseColor(COLOR_BLUE);
 			//Joints connecting upper arm and main body
 			glPushMatrix();
 			glTranslated(-1.5* VAL(WHOLE_SCALE_X), 4* VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
@@ -158,7 +162,8 @@ void SampleModel::draw()
 			glRotated(-VAL(LEFT_UPPER_ARM_ROTATEZ), 0.0, 0.0, 1.0);
 			glTranslated(1.5* VAL(WHOLE_SCALE_X), -4 * VAL(WHOLE_SCALE_Z) + 0.5*VAL(WHOLE_SCALE_X), 0);
 			{
-		
+				if (VAL(COLORFUL) == 1)
+					setDiffuseColor(COLOR_GRAY);
 				glPushMatrix();//Upper arm
 				glTranslated(-1.5* VAL(WHOLE_SCALE_X), 4 * VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
 				glRotated(90, 1.0, 0.0, 0.0);
@@ -173,6 +178,8 @@ void SampleModel::draw()
 			}
 			if(VAL(Level_OF_DETAILS) > 2)
 			{
+				if (VAL(COLORFUL) == 1)
+					setDiffuseColor(COLOR_MAROON);
 				glPushMatrix();//Lower arm begin
 				glTranslated(0.0, 0.5*VAL(WHOLE_SCALE_X), 0.0);//Lower arm rotate
 				glRotated(-VAL(LEFT_LOWER_ARM_ROTATE), 1.0, 0.0, 0.0);
@@ -197,6 +204,8 @@ void SampleModel::draw()
 		}
 		if (VAL(Level_OF_DETAILS) > 1)
 		{
+			if (VAL(COLORFUL) == 1)
+				setDiffuseColor(COLOR_PURPLE);
 			glPushMatrix();//right arm begin
 			//Upper arm rotate
 			glTranslated(1.5* VAL(WHOLE_SCALE_X), 4 * VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
@@ -247,6 +256,8 @@ void SampleModel::draw()
 		glPushMatrix();//lower body begin
 		glRotated(VAL(LOWER_BODY_ROTATE), 0.0, 1.0, 0.0);
 		{
+			if (VAL(COLORFUL) == 1)
+				setDiffuseColor(COLOR_TEAL);
 			glPushMatrix();//hip
 			glRotated(30, 0.0, 1.0, 0.0);
 			for (int i = 0; i != 6; i++) {
@@ -317,6 +328,8 @@ void SampleModel::draw()
 		}
 		if (VAL(Level_OF_DETAILS) > 2)
 		{
+			if (VAL(COLORFUL) == 1)
+				setDiffuseColor(COLOR_ORANGE);
 			glPushMatrix();//Right leg begin
 			glTranslated(0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X), 0);//Upper leg rotate
 			glRotated(-VAL(RIGHT_UPPER_LEG_ROTATEX), 1.0, 0.0, 0.0);
@@ -404,6 +417,7 @@ int main()
 	controls[LSYSTEM_ANGLE] = ModelerControl("change the angle in L system", 0, 90, 1, 45);
 	controls[LSYSTEM_ITERATION] = ModelerControl("change the iteration number", 1, 4, 1, 1);
 	controls[LSYSTEM_REFRESH] = ModelerControl("refresh the L system",0,1,1,0);
+	controls[COLORFUL] = ModelerControl("make the model colorful", 0, 1, 1, 0);
     ModelerApplication::Instance()->Init(&createSampleModel, controls, NUMCONTROLS);
     return ModelerApplication::Instance()->Run();
 }

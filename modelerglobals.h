@@ -34,6 +34,7 @@ enum SampleModelControls
 	LSYSTEM_ANGLE,
 	LSYSTEM_ITERATION,
 	LSYSTEM_REFRESH,
+	COLORFUL,
 	NUMCONTROLS
 };
 
@@ -41,7 +42,11 @@ enum SampleModelControls
 #define COLOR_RED		1.0f, 0.0f, 0.0f
 #define COLOR_GREEN		0.0f, 1.0f, 0.0f
 #define COLOR_BLUE		0.0f, 0.0f, 1.0f
-
+#define COLOR_GRAY		0.5f, 0.5f, 0.5f
+#define COLOR_MAROON	0.5f, 0.0f, 0.0f
+#define COLOR_PURPLE	0.5f, 0.0f, 0.5f
+#define COLOR_TEAL		0,0.5,0.5
+#define COLOR_ORANGE    1,0.5,0
 // We'll be getting the instance of the application a lot; 
 // might as well have it as a macro.
 #define VAL(x) (ModelerApplication::Instance()->GetControlValue(x))
