@@ -112,6 +112,18 @@ void SampleModel::draw()
 	DrawTree();
 	if (VAL(ENABLE_LSYSTEM) == 1)
 		return;
+
+	if (VAL(ENABLE_IK) == 1) {
+		Vec3f Destination = Vec3f(VAL(IK_X), VAL(IK_Y), VAL(IK_Z));
+		IKrightArm->setEnd(Destination);
+		// draw a box to show the destination 
+		glPushMatrix();
+		setDiffuseColor(COLOR_RED);
+		glTranslated(VAL(IK_X), VAL(IK_Y), VAL(IK_Z));
+		drawBox(0.2, 0.2, 0.2);
+		setDiffuseColor(COLOR_GREEN);
+		glPopMatrix();
+	}
 	{	
 		glPushMatrix();//Upper body begin
 		glRotated(VAL(UPPER_BODY_ROTATE) + Additional_Angle, 0.0, 1.0, 0.0);
@@ -154,53 +166,94 @@ void SampleModel::draw()
 			drawSphere(0.5*VAL(WHOLE_SCALE_X));
 			glPopMatrix();
 		}
-		if(VAL(Level_OF_DETAILS) > 1)
-		{
-			glPushMatrix();//Left arm begin
-			glTranslated(-1.5* VAL(WHOLE_SCALE_X), 4 * VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
-			glRotated(-VAL(LEFT_UPPER_ARM_ROTATEX), 1.0, 0.0, 0.0);
-			glRotated(-VAL(LEFT_UPPER_ARM_ROTATEZ), 0.0, 0.0, 1.0);
-			glTranslated(1.5* VAL(WHOLE_SCALE_X), -4 * VAL(WHOLE_SCALE_Z) + 0.5*VAL(WHOLE_SCALE_X), 0);
+		if(VAL(ENABLE_IK) == 1){
+			//maybe another harder part besides calculation
 			{
-				if (VAL(COLORFUL) == 1)
-					setDiffuseColor(COLOR_GRAY);
+				glPushMatrix();//Left arm begin
+				glTranslated(-1.5, 3.5, 0);
+
+				glRotated(IKrightArm->Urotation_y, 0.0, 1.0, 0.0);
+				glRotated(IKrightArm->Urotation_x, 1.0, 0.0, 0.0);
+				
+
+
 				glPushMatrix();//Upper arm
-				glTranslated(-1.5* VAL(WHOLE_SCALE_X), 4 * VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
 				glRotated(90, 1.0, 0.0, 0.0);
-				drawCylinder(4 * VAL(WHOLE_SCALE_Z) - VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
+				drawCylinder(3, 0.4, 0.4);
+				glTranslated(0, 0, 3);
+				drawSphere(0.5);
+				glPopMatrix();
 				glPopMatrix();
 			}
 			{
-				glPushMatrix();//Joint
-				glTranslated(-1.5* VAL(WHOLE_SCALE_X),  0.5*VAL(WHOLE_SCALE_X), 0);
-				drawSphere(0.5* VAL(WHOLE_SCALE_X));
-				glPopMatrix();
-			}
-			if(VAL(Level_OF_DETAILS) > 2)
-			{
-				if (VAL(COLORFUL) == 1)
-					setDiffuseColor(COLOR_MAROON);
 				glPushMatrix();//Lower arm begin
-				glTranslated(0.0, 0.5*VAL(WHOLE_SCALE_X), 0.0);//Lower arm rotate
-				glRotated(-VAL(LEFT_LOWER_ARM_ROTATE), 1.0, 0.0, 0.0);
-				glTranslated(0.0, -0.5*VAL(WHOLE_SCALE_X), 0.0);
+				glTranslated(IKrightArm->Joint[0], IKrightArm->Joint[1],IKrightArm->Joint[2]);//Lower arm rotate
+				glRotated(IKrightArm->Lrotation_y, 0.0, 1.0, 0.0);
+				glRotated(IKrightArm->Lrotation_x, 1.0, 0.0, 0.0);
+				
 				{
 					glPushMatrix();//Lower arm draw
-					glTranslated(-1.5 * VAL(WHOLE_SCALE_X), 0.5 * VAL(WHOLE_SCALE_X), 0.0);
 					glRotated(90, 1.0, 0.0, 0.0);
-					drawCylinder(2* VAL(WHOLE_SCALE_Z), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
-					glPopMatrix();
-				}
-				if (VAL(Level_OF_DETAILS) > 3)
-				{
-					glPushMatrix();//left hand
-					glTranslated(-1.5 * VAL(WHOLE_SCALE_X),0.5*VAL(WHOLE_SCALE_X)- 2 * VAL(WHOLE_SCALE_Z) , 0.0);
+					drawCylinder(2 , 0.4, 0.4);
+					glTranslated(0, 0, 2);
 					drawSphere(0.5*VAL(WHOLE_SCALE_X));
 					glPopMatrix();
 				}
 				glPopMatrix();//lower arm end
 			}
 			glPopMatrix();//left arm end
+
+		}
+		else // draw the right arm without IK
+		{
+			if (VAL(Level_OF_DETAILS) > 1)
+			{
+				glPushMatrix();//Left arm begin
+				glTranslated(-1.5* VAL(WHOLE_SCALE_X), 4 * VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
+				glRotated(-VAL(LEFT_UPPER_ARM_ROTATEX), 1.0, 0.0, 0.0);
+				glRotated(-VAL(LEFT_UPPER_ARM_ROTATEZ), 0.0, 0.0, 1.0);
+				glTranslated(1.5* VAL(WHOLE_SCALE_X), -4 * VAL(WHOLE_SCALE_Z) + 0.5*VAL(WHOLE_SCALE_X), 0);
+				{
+					if (VAL(COLORFUL) == 1)
+						setDiffuseColor(COLOR_GRAY);
+					glPushMatrix();//Upper arm
+					glTranslated(-1.5* VAL(WHOLE_SCALE_X), 4 * VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
+					glRotated(90, 1.0, 0.0, 0.0);
+					drawCylinder(4 * VAL(WHOLE_SCALE_Z) - VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
+					glPopMatrix();
+				}
+				{
+					glPushMatrix();//Joint
+					glTranslated(-1.5* VAL(WHOLE_SCALE_X), 0.5*VAL(WHOLE_SCALE_X), 0);
+					drawSphere(0.5* VAL(WHOLE_SCALE_X));
+					glPopMatrix();
+				}
+				if (VAL(Level_OF_DETAILS) > 2)
+				{
+					if (VAL(COLORFUL) == 1)
+						setDiffuseColor(COLOR_MAROON);
+					glPushMatrix();//Lower arm begin
+					glTranslated(0.0, 0.5*VAL(WHOLE_SCALE_X), 0.0);//Lower arm rotate
+					glRotated(-VAL(LEFT_LOWER_ARM_ROTATE), 1.0, 0.0, 0.0);
+					glTranslated(0.0, -0.5*VAL(WHOLE_SCALE_X), 0.0);
+					{
+						glPushMatrix();//Lower arm draw
+						glTranslated(-1.5 * VAL(WHOLE_SCALE_X), 0.5 * VAL(WHOLE_SCALE_X), 0.0);
+						glRotated(90, 1.0, 0.0, 0.0);
+						drawCylinder(2 * VAL(WHOLE_SCALE_Z), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
+						glPopMatrix();
+					}
+					if (VAL(Level_OF_DETAILS) > 3)
+					{
+						glPushMatrix();//left hand
+						glTranslated(-1.5 * VAL(WHOLE_SCALE_X), 0.5*VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);
+						drawSphere(0.5*VAL(WHOLE_SCALE_X));
+						glPopMatrix();
+					}
+					glPopMatrix();//lower arm end
+				}
+				glPopMatrix();//left arm end
+			}
 		}
 		if (VAL(Level_OF_DETAILS) > 1)
 		{
@@ -418,6 +471,11 @@ int main()
 	controls[LSYSTEM_ITERATION] = ModelerControl("change the iteration number", 1, 4, 1, 1);
 	controls[LSYSTEM_REFRESH] = ModelerControl("refresh the L system",0,1,1,0);
 	controls[COLORFUL] = ModelerControl("make the model colorful", 0, 1, 1, 0);
+	controls[ENABLE_IK] = ModelerControl("enable IK", 0, 1, 1, 0);
+	controls[IK_X] = ModelerControl("set the goal x", -4.5, 1.5, 0.01, -1.5);
+	controls[IK_Y] = ModelerControl("set the goal y", -4.5, 1.5, 0.01, -1.5);
+	controls[IK_Z] = ModelerControl("set the goal z", 3, -3, 0.01, 0);
+	controls[IK_CONSTRAIN] = ModelerControl("enable constrain in IK", 0, 1, 1, 0);
     ModelerApplication::Instance()->Init(&createSampleModel, controls, NUMCONTROLS);
     return ModelerApplication::Instance()->Run();
 }

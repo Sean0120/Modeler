@@ -21,6 +21,7 @@
 #include <string>
 #include<ctime>
 #include<stdlib.h>
+#include"IK.h"
 // To make a SampleModel, we inherit off of ModelerView
 class SampleModel : public ModelerView
 {
@@ -30,6 +31,7 @@ public:
 		Additional_Angle = 0;
 		refresh_L = 0;
 		srand(time(NULL));
+		IKrightArm = new IK(Vec3f(-1.5, 3.5, 0), 3, 2);
 	}
 
 	virtual void draw();
@@ -46,6 +48,7 @@ public:
 	void GenerateResult();
 	void DrawTree();
 	int refresh_L;
+	IK* IKrightArm;
 };
 
 #endif // !SAMPLEMODEL

@@ -157,6 +157,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="Fogcpp.cpp" />
+    <ClCompile Include="IK.cpp" />
     <ClCompile Include="loadImage.cpp" />
     <ClCompile Include="Lsystem.cpp" />
     <ClCompile Include="modelerapp.cpp">
@@ -194,6 +195,7 @@
   <ItemGroup>
     <ClInclude Include="bitmap.h" />
     <ClInclude Include="camera.h" />
+    <ClInclude Include="IK.h" />
     <ClInclude Include="mat.h" />
     <ClInclude Include="modelerapp.h" />
     <ClInclude Include="modelerdraw.h" />
