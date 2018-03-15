@@ -1,4 +1,168 @@
-﻿  MarchingCube.cpp
-c:\users\wang\desktop\modeler-dev_lu\marchingcube.cpp(78): warning C4244: “参数”: 从“double”转换到“const float”，可能丢失数据
-c:\users\wang\desktop\modeler-dev_lu\marchingcube.cpp(85): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
-  modeler.vcxproj -> C:\Users\wang\Desktop\Modeler-dev_LU\.\Debug\modeler.exe
+﻿  ValueVec.cpp
+  sample.cpp
+c:\users\wang\documents\github\modeler\ik.h(5): warning C4305: “初始化”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\samplemodel.h(33): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+c:\users\wang\documents\github\modeler\newdraw.h(184): warning C4244: “参数”: 从“double”转换到“const float”，可能丢失数据
+c:\users\wang\documents\github\modeler\newdraw.h(188): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\documents\github\modeler\newdraw.h(193): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\documents\github\modeler\sample.cpp(63): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\documents\github\modeler\sample.cpp(64): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\documents\github\modeler\sample.cpp(80): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\wang\documents\github\modeler\sample.cpp(81): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\wang\documents\github\modeler\sample.cpp(82): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\wang\documents\github\modeler\sample.cpp(117): warning C4244: “参数”: 从“double”转换到“const float”，可能丢失数据
+c:\users\wang\documents\github\modeler\sample.cpp(515): warning C4305: “参数”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\sample.cpp(516): warning C4305: “参数”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\sample.cpp(521): warning C4305: “参数”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\sample.cpp(527): warning C4305: “参数”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\sample.cpp(528): warning C4305: “参数”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\sample.cpp(529): warning C4305: “参数”: 从“double”到“float”截断
+  new_handle.cpp
+c:\users\wang\documents\github\modeler\ik.h(5): warning C4305: “初始化”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\samplemodel.h(33): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  modelerview.cpp
+  modelerui.cxx
+c:\users\wang\documents\github\modeler\modelerui.cxx(103): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: 参见“fopen”的声明
+  modelerdraw.cpp
+c:\users\wang\documents\github\modeler\modelerdraw.cpp(151): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: 参见“fopen”的声明
+  modelerapp.cpp
+c:\users\wang\documents\github\modeler\modelerapp.cpp(38): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\string.h(337): note: 参见“strncpy”的声明
+  MarchingCube.cpp
+c:\users\wang\documents\github\modeler\marchingcube.cpp(78): warning C4244: “参数”: 从“double”转换到“const float”，可能丢失数据
+c:\users\wang\documents\github\modeler\marchingcube.cpp(85): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+  Lsystem.cpp
+c:\users\wang\documents\github\modeler\ik.h(5): warning C4305: “初始化”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\samplemodel.h(33): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+c:\users\wang\documents\github\modeler\lsystem.cpp(24): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\wang\documents\github\modeler\lsystem.cpp(27): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+c:\users\wang\documents\github\modeler\lsystem.cpp(75): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\documents\github\modeler\lsystem.cpp(76): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  loadImage.cpp
+c:\users\wang\documents\github\modeler\ik.h(5): warning C4305: “初始化”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\samplemodel.h(33): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  IK.cpp
+c:\users\wang\documents\github\modeler\ik.h(5): warning C4305: “初始化”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\ik.cpp(30): warning C4305: “参数”: 从“double”到“const float”截断
+c:\users\wang\documents\github\modeler\ik.cpp(51): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\documents\github\modeler\ik.cpp(68): warning C4244: “参数”: 从“double”转换到“const float”，可能丢失数据
+c:\users\wang\documents\github\modeler\ik.cpp(82): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\documents\github\modeler\ik.cpp(91): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\documents\github\modeler\ik.cpp(99): warning C4244: “参数”: 从“double”转换到“const float”，可能丢失数据
+c:\users\wang\documents\github\modeler\ik.cpp(107): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\documents\github\modeler\ik.cpp(114): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  Fogcpp.cpp
+c:\users\wang\documents\github\modeler\ik.h(5): warning C4305: “初始化”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\samplemodel.h(33): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+c:\users\wang\documents\github\modeler\fogcpp.cpp(12): warning C4305: “参数”: 从“double”到“GLfloat”截断
+  camera.cpp
+c:\users\wang\documents\github\modeler\ik.h(5): warning C4305: “初始化”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\samplemodel.h(33): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  bitmap.cpp
+c:\users\wang\documents\github\modeler\bitmap.cpp(22): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: 参见“fopen”的声明
+c:\users\wang\documents\github\modeler\bitmap.cpp(128): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: 参见“fopen”的声明
+  正在生成代码...
+bitmap.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
+fltkd.lib(case.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(case.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(filename_absolute.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(filename_absolute.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(filename_expand.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(filename_expand.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(filename_isdir.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(filename_isdir.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(filename_list.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(filename_list.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(filename_match.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(filename_match.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_abort.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_abort.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_arc.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_arc.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_arci.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_arci.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_ask.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_ask.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Bitmap.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Bitmap.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Box.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Box.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_boxtype.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_boxtype.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Browser.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Browser.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Browser_.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Browser_.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Button.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Button.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Check_Button.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Check_Button.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Choice.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Choice.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_color.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_color.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_compose.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_compose.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_cursor.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_cursor.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_curve.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_curve.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Device.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Device.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_dnd.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_dnd.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Double_Window.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Double_Window.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_draw.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_draw.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_draw_image.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_draw_image.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_draw_pixmap.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_draw_pixmap.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_File_Browser.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_File_Browser.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_File_Chooser.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_File_Chooser.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_File_Chooser2.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_File_Chooser2.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_file_dir.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_file_dir.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_File_Icon.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_File_Icon.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_File_Input.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_File_Input.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_font.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_font.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_get_system_colors.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_get_system_colors.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_grab.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_grab.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Group.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Group.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_gtk.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_gtk.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_gleam.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_gleam.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Image.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Image.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Input.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Input.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Input_.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Input_.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_labeltype.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_labeltype.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Light_Button.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Light_Button.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_line_style.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_line_style.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_lock.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_lock.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Menu.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Menu.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Menu_.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Menu_.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Menu_add.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Menu_add.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Menu_Bar.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Menu_Bar.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Menu_Button.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Menu_Button.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Menu_Window.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Menu_Window.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Overlay_Window.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Overlay_Window.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Pack.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Pack.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Pixmap.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Pixmap.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_plastic.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_plastic.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Preferences.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Preferences.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_read_image.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_read_image.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_rect.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_rect.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Repeat_Button.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Repeat_Button.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Return_Button.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Return_Button.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_round_box.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_round_box.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Scroll.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Scroll.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_scroll_area.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_scroll_area.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Scrollbar.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Scrollbar.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Shared_Image.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Shared_Image.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_shortcut.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_shortcut.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Single_Window.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Single_Window.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Slider.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Slider.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_symbols.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_symbols.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Tile.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Tile.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Tiled_Image.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Tiled_Image.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Tooltip.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Tooltip.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_utf.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_utf.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_utf8.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_utf8.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Valuator.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Valuator.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Value_Slider.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Value_Slider.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(fl_vertex.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(fl_vertex.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_visual.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_visual.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Widget.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Widget.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Window.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Window.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Window_fullscreen.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Window_fullscreen.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Window_hotspot.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Window_hotspot.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_Window_shape.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_Window_shape.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_XBM_Image.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_XBM_Image.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(Fl_XPM_Image.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(Fl_XPM_Image.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(flstring.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(flstring.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(is_spacing.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(is_spacing.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(numericsort.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(numericsort.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(scandir.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(scandir.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(screen_xywh.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(screen_xywh.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkd.lib(vsnprintf.obj) : warning LNK4099: 未找到 PDB“fltk.pdb”(使用“fltkd.lib(vsnprintf.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltk.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkgld.lib(Fl_Gl_Choice.obj) : warning LNK4099: 未找到 PDB“fltkgl.pdb”(使用“fltkgld.lib(Fl_Gl_Choice.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltkgl.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkgld.lib(Fl_Gl_Device_Plugin.obj) : warning LNK4099: 未找到 PDB“fltkgl.pdb”(使用“fltkgld.lib(Fl_Gl_Device_Plugin.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltkgl.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkgld.lib(Fl_Gl_Window.obj) : warning LNK4099: 未找到 PDB“fltkgl.pdb”(使用“fltkgld.lib(Fl_Gl_Window.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltkgl.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+fltkgld.lib(gl_draw.obj) : warning LNK4099: 未找到 PDB“fltkgl.pdb”(使用“fltkgld.lib(gl_draw.obj)”或在“C:\Users\wang\Documents\GitHub\Modeler\Debug\fltkgl.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+  modeler.vcxproj -> C:\Users\wang\Documents\GitHub\Modeler\.\Debug\modeler.exe

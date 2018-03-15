@@ -142,6 +142,7 @@ void SampleModel::draw()
 				glPopMatrix();
 			}
 			if (VAL(HAS_RING) == 1) {
+				if(!VAL(HAVE_MUSCLE))
 				glRotated(90, 1.0, 0, 0);
 				glTranslated(0.0, 6.0, 0.0);
 				drawTorus(0.8, 0.2);
