@@ -1,12 +1,4 @@
-﻿  IK.cpp
-d:\desktop\comp4411\modeler\ik.h(5): warning C4305: 'initializing': truncation from 'double' to 'float'
-d:\desktop\comp4411\modeler\ik.cpp(30): warning C4305: 'argument': truncation from 'double' to 'const float'
-d:\desktop\comp4411\modeler\ik.cpp(51): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-d:\desktop\comp4411\modeler\ik.cpp(68): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-d:\desktop\comp4411\modeler\ik.cpp(82): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-d:\desktop\comp4411\modeler\ik.cpp(91): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-d:\desktop\comp4411\modeler\ik.cpp(99): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-d:\desktop\comp4411\modeler\ik.cpp(107): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-d:\desktop\comp4411\modeler\ik.cpp(114): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  modeler.vcxproj -> D:\Desktop\COMP4411\Modeler\.\Debug\modeler.exe
-  modeler.vcxproj -> .\Debug/modeler.pdb (Full PDB)
+﻿  MarchingCube.cpp
+c:\users\wang\desktop\modeler-dev_lu\marchingcube.cpp(78): warning C4244: “参数”: 从“double”转换到“const float”，可能丢失数据
+c:\users\wang\desktop\modeler-dev_lu\marchingcube.cpp(85): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+  modeler.vcxproj -> C:\Users\wang\Desktop\Modeler-dev_LU\.\Debug\modeler.exe

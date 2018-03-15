@@ -7,6 +7,9 @@
 #include <math.h>
 #include "modelerglobals.h"
 #include "modelerdraw.h"
+#include "MarchingCube.h"
+#include "ValueVec.h"
+
 void _dump_current_modelview(void);
 void _dump_current_material(void);
 void _setupOpenGl();
@@ -161,6 +164,43 @@ void drawTorus(double r1, double r2)
         glPopMatrix();
         glMatrixMode(savemode);
     }
+}
+
+void drawOrganic(double posx, double posy, double posz,double min) {
+	const double MINX = -2.0;
+	const double MAXX = 2.0;
+	const double MINY = -5.0;
+	const double MAXY = 5.0;
+	const double MINZ = -2.0;
+	const double MAXZ = 2.0;
+
+	int numOfTriangles = 0;
+
+	//Resolution
+	int nX, nY, nZ;
+	nX = nY = nZ = 25;
+
+	ValueVec* mcPoints = new ValueVec[(nX + 1)*(nY + 1)*(nZ + 1)];
+	Vec3f stepSize((MAXX - MINX) / nX, (MAXY - MINY) / nY, (MAXZ - MINZ) / nZ);
+	for (int i = 0; i < nX + 1; i++)
+		for (int j = 0; j < nY + 1; j++)
+			for (int k = 0; k < nZ + 1; k++) {
+				ValueVec vert(MINX + i * stepSize[0], MINY + j * stepSize[1], MINZ + k * stepSize[2], 0);
+				vert.value = Potential((Vec3f)vert, posx, posy, posz);
+				mcPoints[i*(nY + 1)*(nZ + 1) + j * (nZ + 1) + k] = vert;
+			}
+
+	TRIANGLE * Triangles = MarchingCubes(nX, nY, nZ, min, mcPoints, LinearInterp, numOfTriangles);
+
+
+	glPushMatrix();
+	for (int i = 0; i < numOfTriangles; ++i)
+		drawTriangle(Triangles[i].p[0][0], Triangles[i].p[0][1], Triangles[i].p[0][2],
+			Triangles[i].p[1][0], Triangles[i].p[1][1], Triangles[i].p[1][2],
+			Triangles[i].p[2][0], Triangles[i].p[2][1], Triangles[i].p[2][2]);
+	glPopMatrix();
+	delete[] mcPoints;
+	delete[] Triangles;
 }
 
 double f1(double i) { return i; };

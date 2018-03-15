@@ -130,8 +130,17 @@ void SampleModel::draw()
 		{
 			//Main body
 			glPushMatrix();
-			glRotated(-90, 1.0, 0, 0);
-			drawCylinder(4 * VAL(WHOLE_SCALE_Z) , 1 * VAL(WHOLE_SCALE_X), 1 *VAL(WHOLE_SCALE_X));
+			if (!VAL(HAVE_MUSCLE))
+			{
+				glRotated(-90, 1.0, 0, 0);
+				drawCylinder(4 * VAL(WHOLE_SCALE_Z), 1 * VAL(WHOLE_SCALE_X), 1 * VAL(WHOLE_SCALE_X));
+			}
+			else {
+				glPushMatrix();
+				glTranslated(0.0, 0.25*VAL(WHOLE_SCALE_Z), 0.0);
+				drawOrganic(3* VAL(WHOLE_SCALE_Z), 0, 0, 1.2);
+				glPopMatrix();
+			}
 			if (VAL(HAS_RING) == 1) {
 				glRotated(90, 1.0, 0, 0);
 				glTranslated(0.0, 6.0, 0.0);
@@ -178,6 +187,7 @@ void SampleModel::draw()
 
 
 				glPushMatrix();//Upper arm
+				
 				glRotated(90, 1.0, 0.0, 0.0);
 				drawCylinder(3, 0.4, 0.4);
 				glTranslated(0, 0, 3);
@@ -218,6 +228,13 @@ void SampleModel::draw()
 						setDiffuseColor(COLOR_GRAY);
 					glPushMatrix();//Upper arm
 					glTranslated(-1.5* VAL(WHOLE_SCALE_X), 4 * VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
+					if (VAL(HAVE_MUSCLE))
+					{
+						glPushMatrix();
+						glTranslated(0, -0.25 * VAL(WHOLE_SCALE_Z), 0);
+						drawOrganic(-2.2 * VAL(WHOLE_SCALE_Z), 0, 0, 1.7);
+						glPopMatrix();
+					}
 					glRotated(90, 1.0, 0.0, 0.0);
 					drawCylinder(4 * VAL(WHOLE_SCALE_Z) - VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
 					glPopMatrix();
@@ -239,6 +256,13 @@ void SampleModel::draw()
 					{
 						glPushMatrix();//Lower arm draw
 						glTranslated(-1.5 * VAL(WHOLE_SCALE_X), 0.5 * VAL(WHOLE_SCALE_X), 0.0);
+						if (VAL(HAVE_MUSCLE))
+						{
+							glPushMatrix();
+							glTranslated(0.0, -0.2*VAL(WHOLE_SCALE_Z), 0.0);
+							drawOrganic(-1.1 * VAL(WHOLE_SCALE_Z), 0, 0, 2.3);
+							glPopMatrix();
+						}
 						glRotated(90, 1.0, 0.0, 0.0);
 						drawCylinder(2 * VAL(WHOLE_SCALE_Z), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
 						glPopMatrix();
@@ -268,6 +292,12 @@ void SampleModel::draw()
 			{
 				glPushMatrix();//Upper arm
 				glTranslated(1.5* VAL(WHOLE_SCALE_X), 4 * VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
+				if (VAL(HAVE_MUSCLE)) {
+					glPushMatrix();
+					glTranslated(0, -0.25 * VAL(WHOLE_SCALE_Z), 0);
+					drawOrganic(-2.2 * VAL(WHOLE_SCALE_Z), 0, 0, 1.7);
+					glPopMatrix();
+				}
 				glRotated(90, 1.0, 0.0, 0.0);
 				drawCylinder(4 * VAL(WHOLE_SCALE_Z) - VAL(WHOLE_SCALE_X), 0.4*VAL(WHOLE_SCALE_X), 0.4*VAL(WHOLE_SCALE_X));
 				glPopMatrix();
@@ -287,6 +317,13 @@ void SampleModel::draw()
 				{
 					glPushMatrix();//Lower arm draw
 					glTranslated(1.5 * VAL(WHOLE_SCALE_X), 0.5 * VAL(WHOLE_SCALE_X), 0.0);
+					if (VAL(HAVE_MUSCLE))
+					{
+						glPushMatrix();
+						glTranslated(0.0, -0.2*VAL(WHOLE_SCALE_Z), 0.0);
+						drawOrganic(-1.1 * VAL(WHOLE_SCALE_Z), 0, 0, 2.3);
+						glPopMatrix();
+					}
 					glRotated(90, 1.0, 0.0, 0.0);
 					drawCylinder(2 * VAL(WHOLE_SCALE_Z), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
 					glPopMatrix();
@@ -346,6 +383,8 @@ void SampleModel::draw()
 			{
 				glPushMatrix();//Upper leg
 				glTranslated(-0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X), 0);
+				if (VAL(HAVE_MUSCLE))
+				drawOrganic(-1.5 * VAL(WHOLE_SCALE_Z), 0, 0, 2.1);
 				glRotated(90, 1.0, 0.0, 0.0);
 				drawCylinder(2 * VAL(WHOLE_SCALE_Z), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
 				glPopMatrix();
@@ -365,6 +404,8 @@ void SampleModel::draw()
 				{
 					glPushMatrix();//Lower leg draw
 					glTranslated(-0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);
+					if (VAL(HAVE_MUSCLE))
+					drawOrganic(-2.0* VAL(WHOLE_SCALE_Z), 0, 0, 1.8);
 					glRotated(90, 1.0, 0.0, 0.0);
 					drawCylinder(3 * VAL(WHOLE_SCALE_Z), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
 					glPopMatrix();
@@ -373,6 +414,8 @@ void SampleModel::draw()
 					glPushMatrix();//left foot
 					glTranslated(-0.5* VAL(WHOLE_SCALE_X), -3 * VAL(WHOLE_SCALE_Z) - 0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);
 					drawSphere(0.5* VAL(WHOLE_SCALE_X));
+					glRotated(VAL(LEFT_FOOT_ROTATE), 1.0, 0.0, 0.0);
+					drawCylinder(1.3, 0.5*VAL(WHOLE_SCALE_X), 0.5*VAL(WHOLE_SCALE_X));
 					glPopMatrix();
 				}
 				glPopMatrix();//lower leg end
@@ -390,7 +433,9 @@ void SampleModel::draw()
 			glTranslated(-0.5* VAL(WHOLE_SCALE_X), 0.5* VAL(WHOLE_SCALE_X), 0);
 			{
 				glPushMatrix();//Upper leg
-				glTranslated(0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X), 0);
+				glTranslated(0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X), 0); 
+				if (VAL(HAVE_MUSCLE))
+				drawOrganic(-1.5 * VAL(WHOLE_SCALE_Z), 0, 0,2.1);
 				glRotated(90, 1.0, 0.0, 0.0);
 				drawCylinder(2 * VAL(WHOLE_SCALE_Z), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
 				glPopMatrix();
@@ -410,6 +455,8 @@ void SampleModel::draw()
 				{
 					glPushMatrix();//Lower leg draw
 					glTranslated(0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);
+					if(VAL(HAVE_MUSCLE))
+					drawOrganic(-2.0* VAL(WHOLE_SCALE_Z), 0, 0,1.8);
 					glRotated(90, 1.0, 0.0, 0.0);
 					drawCylinder(  3 * VAL(WHOLE_SCALE_Z), 0.4* VAL(WHOLE_SCALE_X), 0.4* VAL(WHOLE_SCALE_X));
 					glPopMatrix();
@@ -418,6 +465,8 @@ void SampleModel::draw()
 					glPushMatrix();//Right foot
 					glTranslated(0.5* VAL(WHOLE_SCALE_X), -3 * VAL(WHOLE_SCALE_Z) - 0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);
 					drawSphere(0.5* VAL(WHOLE_SCALE_X));
+					glRotated(VAL(RIGHT_FOOT_ROTATE),1.0,0.0,0.0);
+					drawCylinder(1.3, 0.5*VAL(WHOLE_SCALE_X), 0.5*VAL(WHOLE_SCALE_X));
 					glPopMatrix();
 				}
 				glPopMatrix();//lower leg end
@@ -426,6 +475,7 @@ void SampleModel::draw()
 		}
 		glPopMatrix();//lower body end
 	}
+	
 	glPopMatrix();//Whole model end
 }
 
@@ -457,6 +507,8 @@ int main()
 	controls[RIGHT_UPPER_LEG_ROTATEZ] = ModelerControl("Right Leg Rotate Z", -135, 135, 1, 0);
 	controls[LEFT_LOWER_LEG_ROTATE] = ModelerControl("Left Fore Leg Rotate", -135, 135, 1, 0);
 	controls[RIGHT_LOWER_LEG_ROTATE] = ModelerControl("Right Fore Leg Rotate", -135, 135, 1, 0);
+	controls[LEFT_FOOT_ROTATE] = ModelerControl("Left foot Rotate", -135, 135, 1, 0);
+	controls[RIGHT_FOOT_ROTATE] = ModelerControl("Right foot Rotate", -135, 135, 1, 0);
 	controls[SAMPLE_FOG] = ModelerControl("sample fog effect", 0, 1, 1, 0);
 	controls[Level_OF_DETAILS] = ModelerControl("levels of details", 1, 4, 1, 4);
 	controls[TEXTURE] = ModelerControl("Using Texture", 0, 1, 1, 0);
@@ -476,6 +528,7 @@ int main()
 	controls[IK_Y] = ModelerControl("set the goal y", -4.5, 1.5, 0.01, -1.5);
 	controls[IK_Z] = ModelerControl("set the goal z", 3, -3, 0.01, 0);
 	controls[IK_CONSTRAIN] = ModelerControl("enable constrain in IK", 0, 1, 1, 0);
+	controls[HAVE_MUSCLE] = ModelerControl("Have Muscle", 0, 1, 1, 0);
     ModelerApplication::Instance()->Init(&createSampleModel, controls, NUMCONTROLS);
     return ModelerApplication::Instance()->Run();
 }
