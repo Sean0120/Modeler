@@ -1,6 +1,17 @@
 #include"IK.h"
 #include<math.h>
 #include<iostream>
+#include"modelerglobals.h"
+
+#include <windows.h>
+#include <Fl/gl.h>
+#include <gl/glu.h>
+#include"SampleModel.h"
+#include"modelerui.h"
+#include "camera.h"
+#include "modelerglobals.h"
+#include "modelerapp.h"
+#include <math.h>
 using namespace std;
 double PI = 3.14159265359;
 IK::IK(Vec3f Start, float UAL, float LAL) {
@@ -15,13 +26,19 @@ IK::IK(Vec3f Start, float UAL, float LAL) {
 }
 
 void IK::setEnd(Vec3f expected_end) {
-	
+	if (VAL(IK_CONSTRAIN) == 1) {
+		if (expected_end[0] > -1.5) {
+			expected_end[0] = -1.5;
+		}
+	}
+
 	End = expected_end;
 	calculate();
 }
 
 void IK::calculate() {
 	//use a for loop to gradually approach the expected_end and at most do 100 times
+
 	for (int i = 0; i < 100; ++i) {
 		result = End; 
 		Vec3f r_jdir = result - Joint;
