@@ -128,7 +128,7 @@ void SampleModel::draw()
 	}
 	{	
 		glPushMatrix();//Upper body begin
-		glRotated(VAL(UPPER_BODY_ROTATE) + Additional_Angle, 0.0, 1.0, 0.0);
+		glRotated((VAL(UPPER_BODY_ROTATE) + Additional_Angle)*VAL(MOOD), 0.0, 1.0, 0.0);
 		{
 			//Main body
 			glPushMatrix();
@@ -223,8 +223,8 @@ void SampleModel::draw()
 			{
 				glPushMatrix();//Left arm begin
 				glTranslated(-1.5* VAL(WHOLE_SCALE_X), 4 * VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
-				glRotated(-VAL(LEFT_UPPER_ARM_ROTATEX), 1.0, 0.0, 0.0);
-				glRotated(-VAL(LEFT_UPPER_ARM_ROTATEZ), 0.0, 0.0, 1.0);
+				glRotated(-VAL(LEFT_UPPER_ARM_ROTATEX)*VAL(MOOD), 1.0, 0.0, 0.0);
+				glRotated(-VAL(LEFT_UPPER_ARM_ROTATEZ)*VAL(MOOD), 0.0, 0.0, 1.0);
 				glTranslated(1.5* VAL(WHOLE_SCALE_X), -4 * VAL(WHOLE_SCALE_Z) + 0.5*VAL(WHOLE_SCALE_X), 0);
 				{
 					if (VAL(COLORFUL) == 1)
@@ -254,7 +254,7 @@ void SampleModel::draw()
 						setDiffuseColor(COLOR_MAROON);
 					glPushMatrix();//Lower arm begin
 					glTranslated(0.0, 0.5*VAL(WHOLE_SCALE_X), 0.0);//Lower arm rotate
-					glRotated(-VAL(LEFT_LOWER_ARM_ROTATE), 1.0, 0.0, 0.0);
+					glRotated(-VAL(LEFT_LOWER_ARM_ROTATE)*VAL(MOOD), 1.0, 0.0, 0.0);
 					glTranslated(0.0, -0.5*VAL(WHOLE_SCALE_X), 0.0);
 					{
 						glPushMatrix();//Lower arm draw
@@ -289,8 +289,8 @@ void SampleModel::draw()
 			glPushMatrix();//right arm begin
 			//Upper arm rotate
 			glTranslated(1.5* VAL(WHOLE_SCALE_X), 4 * VAL(WHOLE_SCALE_Z) - 0.5*VAL(WHOLE_SCALE_X), 0);
-			glRotated(-VAL(RIGHT_UPPER_ARM_ROTATEX), 1.0, 0.0, 0.0);
-			glRotated(-VAL(RIGHT_UPPER_ARM_ROTATEZ), 0.0, 0.0, 1.0);
+			glRotated(-VAL(RIGHT_UPPER_ARM_ROTATEX)*VAL(MOOD), 1.0, 0.0, 0.0);
+			glRotated(-VAL(RIGHT_UPPER_ARM_ROTATEZ)*VAL(MOOD), 0.0, 0.0, 1.0);
 			glTranslated(-1.5* VAL(WHOLE_SCALE_X), -4 * VAL(WHOLE_SCALE_Z) + 0.5*VAL(WHOLE_SCALE_X), 0);
 			{
 				glPushMatrix();//Upper arm
@@ -315,7 +315,7 @@ void SampleModel::draw()
 			{
 				glPushMatrix();//Lower arm begin
 				glTranslated(0.0, 0.5*VAL(WHOLE_SCALE_X), 0.0);//Lower arm rotate
-				glRotated(-VAL(RIGHT_LOWER_ARM_ROTATE), 1.0, 0.0, 0.0);
+				glRotated(-VAL(RIGHT_LOWER_ARM_ROTATE)*VAL(MOOD), 1.0, 0.0, 0.0);
 				glTranslated(0.0, -0.5*VAL(WHOLE_SCALE_X), 0.0);
 				{
 					glPushMatrix();//Lower arm draw
@@ -347,7 +347,7 @@ void SampleModel::draw()
 	if(VAL(Level_OF_DETAILS) > 1)
 	{
 		glPushMatrix();//lower body begin
-		glRotated(VAL(LOWER_BODY_ROTATE), 0.0, 1.0, 0.0);
+		glRotated(VAL(LOWER_BODY_ROTATE)*VAL(MOOD), 0.0, 1.0, 0.0);
 		{
 			if (VAL(COLORFUL) == 1)
 				setDiffuseColor(COLOR_TEAL);
@@ -380,9 +380,9 @@ void SampleModel::draw()
 		{
 			glPushMatrix();//Left leg begin
 			glTranslated(-0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X), 0);//Upper leg rotate
-			glRotated(-VAL(LEFT_UPPER_LEG_ROTATEX), 1.0, 0.0, 0.0);
-			glRotated(-VAL(LEFT_KNEE), 1.0, 0.0, 0.0);
-			glRotated(-VAL(LEFT_UPPER_LEG_ROTATEZ), 0.0, 0.0, 1.0);
+			glRotated(-VAL(LEFT_UPPER_LEG_ROTATEX)*VAL(MOOD), 1.0, 0.0, 0.0);
+			glRotated(-VAL(LEFT_KNEE)*VAL(MOOD), 1.0, 0.0, 0.0);
+			glRotated(-VAL(LEFT_UPPER_LEG_ROTATEZ)*VAL(MOOD), 0.0, 0.0, 1.0);
 			glTranslated(0.5* VAL(WHOLE_SCALE_X), 0.5* VAL(WHOLE_SCALE_X), 0);
 			{
 				glPushMatrix();//Upper leg
@@ -403,8 +403,8 @@ void SampleModel::draw()
 			{
 				glPushMatrix();//Lower leg begin
 				glTranslated(0.0, -0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);//Lower leg rotate
-				glRotated(-VAL(LEFT_LOWER_LEG_ROTATE), 1.0, 0.0, 0.0);
-				glRotated(VAL(LEFT_KNEE), 1.0, 0.0, 0.0);
+				glRotated(-VAL(LEFT_LOWER_LEG_ROTATE)*VAL(MOOD), 1.0, 0.0, 0.0);
+				glRotated(VAL(LEFT_KNEE)*VAL(MOOD), 1.0, 0.0, 0.0);
 				glTranslated(0.0, 0.5* VAL(WHOLE_SCALE_X) + 2 * VAL(WHOLE_SCALE_Z), 0.0);
 				{
 					glPushMatrix();//Lower leg draw
@@ -419,7 +419,7 @@ void SampleModel::draw()
 					glPushMatrix();//left foot
 					glTranslated(-0.5* VAL(WHOLE_SCALE_X), -3 * VAL(WHOLE_SCALE_Z) - 0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);
 					drawSphere(0.5* VAL(WHOLE_SCALE_X));
-					glRotated(VAL(LEFT_FOOT_ROTATE), 1.0, 0.0, 0.0);
+					glRotated(VAL(LEFT_FOOT_ROTATE)*VAL(MOOD), 1.0, 0.0, 0.0);
 					drawCylinder(1.3, 0.5*VAL(WHOLE_SCALE_X), 0.5*VAL(WHOLE_SCALE_X));
 					glPopMatrix();
 				}
@@ -433,9 +433,9 @@ void SampleModel::draw()
 				setDiffuseColor(COLOR_ORANGE);
 			glPushMatrix();//Right leg begin
 			glTranslated(0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X), 0);//Upper leg rotate
-			glRotated(-VAL(RIGHT_UPPER_LEG_ROTATEX), 1.0, 0.0, 0.0);
-			glRotated(-VAL(RIGHT_KNEE), 1.0, 0.0, 0.0);
-			glRotated(-VAL(RIGHT_UPPER_LEG_ROTATEZ), 0.0, 0.0, 1.0);
+			glRotated(-VAL(RIGHT_UPPER_LEG_ROTATEX)*VAL(MOOD), 1.0, 0.0, 0.0);
+			glRotated(-VAL(RIGHT_KNEE)*VAL(MOOD), 1.0, 0.0, 0.0);
+			glRotated(-VAL(RIGHT_UPPER_LEG_ROTATEZ)*VAL(MOOD), 0.0, 0.0, 1.0);
 			glTranslated(-0.5* VAL(WHOLE_SCALE_X), 0.5* VAL(WHOLE_SCALE_X), 0);
 			{
 				glPushMatrix();//Upper leg
@@ -456,8 +456,8 @@ void SampleModel::draw()
 			{
 				glPushMatrix();//Lower leg begin
 				glTranslated(0.0, -0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);//Lower leg rotate
-				glRotated(-VAL(RIGHT_LOWER_LEG_ROTATE), 1.0, 0.0, 0.0);
-				glRotated(VAL(RIGHT_KNEE), 1.0, 0.0, 0.0);
+				glRotated(-VAL(RIGHT_LOWER_LEG_ROTATE)*VAL(MOOD), 1.0, 0.0, 0.0);
+				glRotated(VAL(RIGHT_KNEE)*VAL(MOOD), 1.0, 0.0, 0.0);
 				glTranslated(0.0, 0.5* VAL(WHOLE_SCALE_X) + 2 * VAL(WHOLE_SCALE_Z), 0.0);
 				{
 					glPushMatrix();//Lower leg draw
@@ -472,7 +472,7 @@ void SampleModel::draw()
 					glPushMatrix();//Right foot
 					glTranslated(0.5* VAL(WHOLE_SCALE_X), -3 * VAL(WHOLE_SCALE_Z) - 0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);
 					drawSphere(0.5* VAL(WHOLE_SCALE_X));
-					glRotated(VAL(RIGHT_FOOT_ROTATE),1.0,0.0,0.0);
+					glRotated(VAL(RIGHT_FOOT_ROTATE)*VAL(MOOD),1.0,0.0,0.0);
 					drawCylinder(1.3, 0.5*VAL(WHOLE_SCALE_X), 0.5*VAL(WHOLE_SCALE_X));
 					glPopMatrix();
 				}
@@ -538,6 +538,7 @@ int main()
 	controls[IK_Z] = ModelerControl("set the goal z", 3, -3, 0.01, 0);
 	controls[IK_CONSTRAIN] = ModelerControl("enable constrain in IK", 0, 1, 1, 0);
 	controls[HAVE_MUSCLE] = ModelerControl("Have Muscle", 0, 1, 1, 0);
+	controls[MOOD] = ModelerControl("Mood", 0, 1, 0.05, 1);
     ModelerApplication::Instance()->Init(&createSampleModel, controls, NUMCONTROLS);
     return ModelerApplication::Instance()->Run();
 }

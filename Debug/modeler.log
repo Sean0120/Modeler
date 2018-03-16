@@ -1,13 +1,63 @@
-﻿  IK.cpp
-d:\desktop\comp4411\modeler\ik.h(5): warning C4305: 'initializing': truncation from 'double' to 'float'
-d:\desktop\comp4411\modeler\samplemodel.h(33): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-d:\desktop\comp4411\modeler\ik.cpp(47): warning C4305: 'argument': truncation from 'double' to 'const float'
-d:\desktop\comp4411\modeler\ik.cpp(68): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-d:\desktop\comp4411\modeler\ik.cpp(85): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-d:\desktop\comp4411\modeler\ik.cpp(99): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-d:\desktop\comp4411\modeler\ik.cpp(108): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-d:\desktop\comp4411\modeler\ik.cpp(116): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-d:\desktop\comp4411\modeler\ik.cpp(124): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-d:\desktop\comp4411\modeler\ik.cpp(131): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  modeler.vcxproj -> D:\Desktop\COMP4411\Modeler\.\Debug\modeler.exe
-  modeler.vcxproj -> .\Debug/modeler.pdb (Full PDB)
+﻿  sample.cpp
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\ik.h(5): warning C4305: “初始化”: 从“double”到“float”截断
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\samplemodel.h(33): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\newdraw.h(184): warning C4244: “参数”: 从“double”转换到“const float”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\newdraw.h(188): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\newdraw.h(193): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\sample.cpp(65): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\sample.cpp(66): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\sample.cpp(82): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\sample.cpp(83): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\sample.cpp(84): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\sample.cpp(119): warning C4244: “参数”: 从“double”转换到“const float”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\sample.cpp(524): warning C4305: “参数”: 从“double”到“float”截断
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\sample.cpp(525): warning C4305: “参数”: 从“double”到“float”截断
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\sample.cpp(530): warning C4305: “参数”: 从“double”到“float”截断
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\sample.cpp(536): warning C4305: “参数”: 从“double”到“float”截断
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\sample.cpp(537): warning C4305: “参数”: 从“double”到“float”截断
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\sample.cpp(538): warning C4305: “参数”: 从“double”到“float”截断
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\sample.cpp(541): warning C4305: “参数”: 从“double”到“float”截断
+  正在生成代码...
+  正在编译...
+  new_handle.cpp
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\ik.h(5): warning C4305: “初始化”: 从“double”到“float”截断
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\samplemodel.h(33): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  modelerui.cxx
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\modelerui.cxx(103): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: 参见“fopen”的声明
+  modelerdraw.cpp
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\modelerdraw.cpp(151): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(207): note: 参见“fopen”的声明
+  modelerapp.cpp
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\modelerapp.cpp(38): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\string.h(337): note: 参见“strncpy”的声明
+  loadImage.cpp
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\ik.h(5): warning C4305: “初始化”: 从“double”到“float”截断
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\samplemodel.h(33): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  camera.cpp
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\ik.h(5): warning C4305: “初始化”: 从“double”到“float”截断
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\samplemodel.h(33): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  Lsystem.cpp
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\ik.h(5): warning C4305: “初始化”: 从“double”到“float”截断
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\samplemodel.h(33): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\lsystem.cpp(24): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\lsystem.cpp(27): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\lsystem.cpp(75): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\lsystem.cpp(76): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  IK.cpp
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\ik.h(5): warning C4305: “初始化”: 从“double”到“float”截断
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\samplemodel.h(33): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\ik.cpp(47): warning C4305: “参数”: 从“double”到“const float”截断
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\ik.cpp(68): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\ik.cpp(85): warning C4244: “参数”: 从“double”转换到“const float”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\ik.cpp(99): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\ik.cpp(108): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\ik.cpp(116): warning C4244: “参数”: 从“double”转换到“const float”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\ik.cpp(124): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\ik.cpp(131): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  Fogcpp.cpp
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\ik.h(5): warning C4305: “初始化”: 从“double”到“float”截断
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\samplemodel.h(33): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+c:\users\wang\downloads\modeler-dev_wang\modeler-dev_wang\fogcpp.cpp(12): warning C4305: “参数”: 从“double”到“GLfloat”截断
+  正在生成代码...
+  modeler.vcxproj -> C:\Users\wang\Downloads\Modeler-dev_WANG\Modeler-dev_WANG\.\Debug\modeler.exe
