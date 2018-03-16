@@ -252,7 +252,7 @@ void Camera::applyViewingTransform() {
 	}
 	else
 	{
-		lookAt(Vec3f(0, 0, 20), Vec3f(0, 0, 0), mUpVector);
+		lookAt(Vec3f(0, 0, 23), Vec3f(0, 0, 0), mUpVector);
 	}
 	/*gluLookAt(	mPosition[0], mPosition[1], mPosition[2],
 	mLookAt[0],   mLookAt[1],   mLookAt[2],
