@@ -4,16 +4,16 @@ c:\users\wang\documents\github\modeler\samplemodel.h(33): warning C4244: “参�
 c:\users\wang\documents\github\modeler\newdraw.h(184): warning C4244: “参数”: 从“double”转换到“const float”，可能丢失数据
 c:\users\wang\documents\github\modeler\newdraw.h(188): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
 c:\users\wang\documents\github\modeler\newdraw.h(193): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
-c:\users\wang\documents\github\modeler\sample.cpp(63): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-c:\users\wang\documents\github\modeler\sample.cpp(64): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-c:\users\wang\documents\github\modeler\sample.cpp(80): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-c:\users\wang\documents\github\modeler\sample.cpp(81): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\wang\documents\github\modeler\sample.cpp(65): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+c:\users\wang\documents\github\modeler\sample.cpp(66): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
 c:\users\wang\documents\github\modeler\sample.cpp(82): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-c:\users\wang\documents\github\modeler\sample.cpp(117): warning C4244: “参数”: 从“double”转换到“const float”，可能丢失数据
-c:\users\wang\documents\github\modeler\sample.cpp(516): warning C4305: “参数”: 从“double”到“float”截断
-c:\users\wang\documents\github\modeler\sample.cpp(517): warning C4305: “参数”: 从“double”到“float”截断
-c:\users\wang\documents\github\modeler\sample.cpp(522): warning C4305: “参数”: 从“double”到“float”截断
-c:\users\wang\documents\github\modeler\sample.cpp(528): warning C4305: “参数”: 从“double”到“float”截断
-c:\users\wang\documents\github\modeler\sample.cpp(529): warning C4305: “参数”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\sample.cpp(83): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\wang\documents\github\modeler\sample.cpp(84): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+c:\users\wang\documents\github\modeler\sample.cpp(119): warning C4244: “参数”: 从“double”转换到“const float”，可能丢失数据
+c:\users\wang\documents\github\modeler\sample.cpp(524): warning C4305: “参数”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\sample.cpp(525): warning C4305: “参数”: 从“double”到“float”截断
 c:\users\wang\documents\github\modeler\sample.cpp(530): warning C4305: “参数”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\sample.cpp(536): warning C4305: “参数”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\sample.cpp(537): warning C4305: “参数”: 从“double”到“float”截断
+c:\users\wang\documents\github\modeler\sample.cpp(538): warning C4305: “参数”: 从“double”到“float”截断
   modeler.vcxproj -> C:\Users\wang\Documents\GitHub\Modeler\.\Debug\modeler.exe

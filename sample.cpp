@@ -381,6 +381,7 @@ void SampleModel::draw()
 			glPushMatrix();//Left leg begin
 			glTranslated(-0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X), 0);//Upper leg rotate
 			glRotated(-VAL(LEFT_UPPER_LEG_ROTATEX), 1.0, 0.0, 0.0);
+			glRotated(-VAL(LEFT_KNEE), 1.0, 0.0, 0.0);
 			glRotated(-VAL(LEFT_UPPER_LEG_ROTATEZ), 0.0, 0.0, 1.0);
 			glTranslated(0.5* VAL(WHOLE_SCALE_X), 0.5* VAL(WHOLE_SCALE_X), 0);
 			{
@@ -403,6 +404,7 @@ void SampleModel::draw()
 				glPushMatrix();//Lower leg begin
 				glTranslated(0.0, -0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);//Lower leg rotate
 				glRotated(-VAL(LEFT_LOWER_LEG_ROTATE), 1.0, 0.0, 0.0);
+				glRotated(VAL(LEFT_KNEE), 1.0, 0.0, 0.0);
 				glTranslated(0.0, 0.5* VAL(WHOLE_SCALE_X) + 2 * VAL(WHOLE_SCALE_Z), 0.0);
 				{
 					glPushMatrix();//Lower leg draw
@@ -432,6 +434,7 @@ void SampleModel::draw()
 			glPushMatrix();//Right leg begin
 			glTranslated(0.5* VAL(WHOLE_SCALE_X), -0.5* VAL(WHOLE_SCALE_X), 0);//Upper leg rotate
 			glRotated(-VAL(RIGHT_UPPER_LEG_ROTATEX), 1.0, 0.0, 0.0);
+			glRotated(-VAL(RIGHT_KNEE), 1.0, 0.0, 0.0);
 			glRotated(-VAL(RIGHT_UPPER_LEG_ROTATEZ), 0.0, 0.0, 1.0);
 			glTranslated(-0.5* VAL(WHOLE_SCALE_X), 0.5* VAL(WHOLE_SCALE_X), 0);
 			{
@@ -454,6 +457,7 @@ void SampleModel::draw()
 				glPushMatrix();//Lower leg begin
 				glTranslated(0.0, -0.5* VAL(WHOLE_SCALE_X) - 2 * VAL(WHOLE_SCALE_Z), 0.0);//Lower leg rotate
 				glRotated(-VAL(RIGHT_LOWER_LEG_ROTATE), 1.0, 0.0, 0.0);
+				glRotated(VAL(RIGHT_KNEE), 1.0, 0.0, 0.0);
 				glTranslated(0.0, 0.5* VAL(WHOLE_SCALE_X) + 2 * VAL(WHOLE_SCALE_Z), 0.0);
 				{
 					glPushMatrix();//Lower leg draw
@@ -509,7 +513,9 @@ int main()
 	controls[RIGHT_UPPER_LEG_ROTATEX] = ModelerControl("Right Leg Rotate X", -135, 135, 1, 0);
 	controls[RIGHT_UPPER_LEG_ROTATEZ] = ModelerControl("Right Leg Rotate Z", -135, 135, 1, 0);
 	controls[LEFT_LOWER_LEG_ROTATE] = ModelerControl("Left Fore Leg Rotate", -135, 135, 1, 0);
+	controls[LEFT_KNEE] = ModelerControl("Left Knee", 0, 90, 1, 0);
 	controls[RIGHT_LOWER_LEG_ROTATE] = ModelerControl("Right Fore Leg Rotate", -135, 135, 1, 0);
+	controls[RIGHT_KNEE] = ModelerControl("Right Knee", 0, 90, 1, 0);
 	controls[LEFT_FOOT_ROTATE] = ModelerControl("Left foot Rotate", -135, 135, 1, 0);
 	controls[RIGHT_FOOT_ROTATE] = ModelerControl("Right foot Rotate", -135, 135, 1, 0);
 	controls[SAMPLE_FOG] = ModelerControl("sample fog effect", 0, 1, 1, 0);
